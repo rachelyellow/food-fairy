@@ -1,3 +1,22 @@
+<!-- PROJECT DESCRIPTION -->
+
+TITLE: 
+
+
+PURPOSE: An application that connects hungry customers to new culinary experiences based off of their geolocation.
+
+Customers can search for hole-in-the-wall restaurants within their proximity and complete a taste quiz to find recommended dishes from a chosen restaurant. Once a quiz is completed, the customer will be rewarded with an exclusive perk specific to said restaurant.
+
+Restaurants can create and customize fun quizzes which offer an incentive to new customers to try out their feature dishes.
+
+
+TARGET AUDIENCE: Mom and pop shops in areas with little foot traffic, adventurous diners
+
+TEAM MEMBERS: RACHEL WONG, ANISA TAHLIL, GAGAN LAL
+
+
+<!-- REACT DOCUMENTATION -->
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -67,11 +86,11 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
+==================================================
 
 
 
-
-
+<!-- RAILS DOCUMENTATION -->
 
 # README
 

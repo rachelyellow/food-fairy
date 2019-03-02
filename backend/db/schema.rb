@@ -10,24 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190302010253) do
+ActiveRecord::Schema.define(version: 20190302013523) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "answers", force: :cascade do |t|
-    t.string "name"
-    t.bigint "question_id"
+    t.bigint "option_id"
     t.bigint "customer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["customer_id"], name: "index_answers_on_customer_id"
-    t.index ["question_id"], name: "index_answers_on_question_id"
-  end
-
-  create_table "answers_dishes", id: false, force: :cascade do |t|
-    t.bigint "answer_id", null: false
-    t.bigint "dish_id", null: false
+    t.index ["option_id"], name: "index_answers_on_option_id"
   end
 
   create_table "customers", force: :cascade do |t|
@@ -46,9 +40,22 @@ ActiveRecord::Schema.define(version: 20190302010253) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "dishes_options", id: false, force: :cascade do |t|
+    t.bigint "option_id", null: false
+    t.bigint "dish_id", null: false
+  end
+
   create_table "dishes_results", id: false, force: :cascade do |t|
     t.bigint "result_id", null: false
     t.bigint "dish_id", null: false
+  end
+
+  create_table "options", force: :cascade do |t|
+    t.bigint "question_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_options_on_question_id"
   end
 
   create_table "questions", force: :cascade do |t|
@@ -87,7 +94,8 @@ ActiveRecord::Schema.define(version: 20190302010253) do
   end
 
   add_foreign_key "answers", "customers"
-  add_foreign_key "answers", "questions"
+  add_foreign_key "answers", "options"
+  add_foreign_key "options", "questions"
   add_foreign_key "questions", "quizzes"
   add_foreign_key "quizzes", "restaurants"
   add_foreign_key "results", "customers"

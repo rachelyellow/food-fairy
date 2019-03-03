@@ -1,6 +1,6 @@
 <!-- PROJECT DESCRIPTION -->
 
-TITLE: 
+TITLE: Food Fairy
 
 
 PURPOSE: An application that connects hungry customers to new culinary experiences based off of their geolocation.
@@ -16,8 +16,6 @@ TEAM MEMBERS: RACHEL WONG, ANISA TAHLIL, GAGAN LAL
 
 
 <!-- REACT DOCUMENTATION -->
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 

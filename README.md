@@ -1,21 +1,30 @@
 <!-- PROJECT DESCRIPTION -->
 
-TITLE: Food Fairy
+# Food Fairy
 
+### PURPOSE
 
-PURPOSE: An application that connects hungry customers to new culinary experiences based off of their geolocation.
+An application that connects hungry customers to new culinary experiences based off of their geolocation.
 
 Customers can search for hole-in-the-wall restaurants within their proximity and complete a taste quiz to find recommended dishes from a chosen restaurant. Once a quiz is completed, the customer will be rewarded with an exclusive perk specific to said restaurant.
 
 Restaurants can create and customize fun quizzes which offer an incentive to new customers to try out their feature dishes.
 
 
-TARGET AUDIENCE: Mom and pop shops in areas with little foot traffic, adventurous diners
+### TARGET AUDIENCE
 
-TEAM MEMBERS: RACHEL WONG, ANISA TAHLIL, GAGAN LAL
+Mom and pop shops in areas with little foot traffic, adventurous diners
+
+### TEAM MEMBERS
+
+[Gagan Lal](https://github.com/gaganlal)
+[Anisa Tahlil](https://github.com/anisa114)
+[Rachel Wong](https://github.com/rachelyellow)
 
 
-<!-- REACT DOCUMENTATION -->
+<!-- 
+
+REACT DOCUMENTATION
 
 ## Available Scripts
 
@@ -88,7 +97,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 
 
-<!-- RAILS DOCUMENTATION -->
+RAILS DOCUMENTATION
 
 # README
 
@@ -114,6 +123,11 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+ -->
+
+
+
 
 
 

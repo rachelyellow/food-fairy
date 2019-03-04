@@ -87,8 +87,8 @@ ActiveRecord::Schema.define(version: 20190303211146) do
     t.string "reward"
     t.string "email"
     t.string "password_digest"
-    t.float "long"
-    t.float "lan"
+    t.float "longitude"
+    t.float "latitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

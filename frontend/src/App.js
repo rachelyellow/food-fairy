@@ -1,25 +1,18 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import axios from 'axios'; 
+import Login from  './login.js';
+import Quiz from './quiz.js'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        hhh
+        <Login />
+        <Quiz />
+       <h1> hhhhh </h1> Hi my firends whats up whrfhfhdfsdfhsd
       </div>
     );
   }

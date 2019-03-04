@@ -3,7 +3,11 @@ package com.frontend_react_native;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+<<<<<<< HEAD
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
+=======
+import com.airbnb.android.react.maps.MapsPackage;
+>>>>>>> e060b15... installed dependencies for iOS app.
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -24,7 +28,11 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+<<<<<<< HEAD
             new RNGestureHandlerPackage()
+=======
+            new MapsPackage()
+>>>>>>> e060b15... installed dependencies for iOS app.
       );
     }
 

@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'results/create'
+
+  get 'results/show'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.htm
 
   # Create a root that shows the google maps 
@@ -9,7 +13,7 @@ Rails.application.routes.draw do
   get '/customers/logout' => 'sessions#destroy'
 
   resources :questions, only: [:show]
-  resources :results, only: [:show]
+  resources :results, only: [:show, :create]
 
   resources :restaurants do
     resources :quizzes, only:[:show, :create, :update]

@@ -1,34 +1,14 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import axios from 'axios'; 
-import './App.css';
-import Quiz from "./Quiz.js";
+import Quiz from './Quiz';
 
 class App extends Component {
 
-  constructor () {
-    super();
-    this.state = {
-      quizData: { questions: [] }
-    }
-  }
-  
-  componentDidMount() {
-    axios('/restaurants/1/quizzes/1')
-    .then(response => {
-        console.log(response.data)
-        this.setState({
-            quizData: response.data
-        })
-    })
-    .catch(error => console.log(error))
-  }
 
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <Quiz data={this.state.quizData} />
+          <Quiz />
         </header>
       </div>
     );
@@ -36,3 +16,17 @@ class App extends Component {
 }
 
 export default App;
+
+
+{/* <Router>
+  <Route path="/">
+    <div className="App">
+      <header className="App-header">
+      </header>
+    </div>
+  </Route>
+  <Switch>
+    <Route path="/quiz" component={Quiz} />
+    <Route path="/results" component={Results} />
+  </Switch>
+</Router> */}

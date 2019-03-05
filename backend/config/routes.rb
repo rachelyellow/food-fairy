@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'answers/create'
+
   get 'results/create'
 
   get 'results/show'

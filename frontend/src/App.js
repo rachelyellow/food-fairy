@@ -7,17 +7,6 @@ import Quiz from './quiz.js'
 
 class App extends Component {
 
-  componentDidMount() {
-    axios.get('http://localhost:3001/api/v1/lists.json')
-    .then(response => {
-        console.log(response)
-        this.setState({
-            data: response.data
-        })
-    })
-    .catch(error => console.log(error))
-  }
-
   render() {
 
     return (

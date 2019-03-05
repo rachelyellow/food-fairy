@@ -3,12 +3,13 @@ import axios from 'axios'
 import Question from './question.js'
 
 class Quiz extends Component{
+
   state = {
     questions: []
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3000/restaurants/3/quizzes/1')
+    axios.get('http://localhost:3000/restaurants/1/quizzes/2')
     .then(res => {
       // var questions = res.data.questions.map(element => {
       //   return element.inquiry
@@ -25,10 +26,13 @@ class Quiz extends Component{
       // })
       // console.log("this is the options state", arrayOfOptions)
       // console.log("this is questions state", questions)
-    
-      this.setState({
-        questions: res.data.questions
-      })
+      if (res.status === 200)
+      {
+        this.setState({
+          questions: res.data.questions
+        })
+      }
+      
 
     })
     .catch(function (error) {
@@ -38,13 +42,17 @@ class Quiz extends Component{
   }
   
   render() {
-
+    
+    
     return(
-
       <div>
-       {this.state.questions.map((item, idx) => {
-         return <Question question={item} key={idx} />
-       })}
+        { this.state.questions.length > 0 ? 
+            this.state.questions.map((item, idx) => {
+              return <Question question={item} key={idx} />
+            }) 
+          : <h1>No data</h1> 
+        }
+
       </div>
     )
   }

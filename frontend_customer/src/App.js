@@ -1,24 +1,34 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import axios from 'axios'; 
 import './App.css';
+import Quiz from "./Quiz.js";
 
 class App extends Component {
+
+  constructor () {
+    super();
+    this.state = {
+      quizData: { questions: [] }
+    }
+  }
+  
+  componentDidMount() {
+    axios('/restaurants/1/quizzes/1')
+    .then(response => {
+        console.log(response.data)
+        this.setState({
+            quizData: response.data
+        })
+    })
+    .catch(error => console.log(error))
+  }
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          <Quiz data={this.state.quizData} />
         </header>
       </div>
     );

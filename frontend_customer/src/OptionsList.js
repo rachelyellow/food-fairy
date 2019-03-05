@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Option from "./Option.jsx";
+import Option from "./Option.js";
 
 class OptionsList extends Component {
   constructor() {
@@ -9,7 +9,9 @@ class OptionsList extends Component {
   render() {
     return (
       <ul>
-        <Option/>
+        {this.props.options.map((answer, index) => {
+          return <Option answer={answer} nextQuestion={this.props.nextQuestion} key={answer.id} />
+        })}
       </ul>
     );
   }

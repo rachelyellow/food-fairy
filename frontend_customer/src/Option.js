@@ -5,10 +5,12 @@ class Option extends Component {
     super();
   }
 
+  
   render() {
+    console.log(this.props.nextQuestion)
     return (
       <li>
-        <Option/>
+        <button onClick={this.props.nextQuestion} >{this.props.answer.name}</button>
       </li>
     );
   }

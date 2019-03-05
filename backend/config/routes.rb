@@ -14,5 +14,9 @@ Rails.application.routes.draw do
   resources :restaurants do
     resources :quizzes, only:[:show, :create, :update]
   end
+
+  namespace :api do
+    resources :restaurants
+  end
 end
 

@@ -1,7 +1,9 @@
 class QuizzesController < ApplicationController
     def show 
-        @quiz = Quiz.find params[:id]
-        @questions = Question.where(quiz_id: @quiz.id)
+        @restaurant = Restaurant.find params[:restaurant_id]
+        id = params[:id]
+        @quiz = Quiz.where(restaurant_id: @restaurant.id, id: id)
+        @questions = Question.where(quiz_id: @quiz.ids)
              render :json => {:questions => @questions.as_json(include: {options: {include: :dishes} }),
              }     
     end

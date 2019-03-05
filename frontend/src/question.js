@@ -3,7 +3,9 @@ import Option from './option.js'
 
 
 class Question extends Component{
-  
+  constructor(props) {
+    super(props);
+  }
   render() {
 
     return(

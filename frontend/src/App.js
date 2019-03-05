@@ -7,12 +7,10 @@ import Quiz from './quiz.js'
 
 class App extends Component {
   render() {
+
     return (
       <div>
-        hhh
-        <Login />
         <Quiz />
-       <h1> hhhhh </h1> Hi my firends whats up whrfhfhdfsdfhsd
       </div>
     );
   }

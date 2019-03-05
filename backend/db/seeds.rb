@@ -9,11 +9,16 @@
 # Creating Restaurants
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 res1 = Restaurant.create(name: "Rachel's Sushi Palace", reward: "$5.00 off first order", email: "rachel@gmail.com", password_digest: "hello", longitude: 43.6, latitude: -79.40);
 =======
 res1 = Restaurant.create(name: "Rachel's Sushi Palace", reward: "$5.00 off first order", email: "rachel@gmail.com", password_digest:"hello", longitude:43.6, latitude:-79.40);
 
 >>>>>>> 4a29b1d... back end work
+=======
+res1 = Restaurant.create(name: "Rachel's Sushi Palace", reward: "$5.00 off first order", email: "rachel@gmail.com", password_digest:"hello", longitude:43.6, latitude:-79.40);
+
+>>>>>>> origin
 
 quiz1 = Quiz.create(restaurant_id:1);
 

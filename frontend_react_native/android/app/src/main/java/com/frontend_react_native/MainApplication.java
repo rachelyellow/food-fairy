@@ -3,6 +3,8 @@ package com.frontend_react_native;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
+import com.airbnb.android.react.maps.MapsPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -22,7 +24,12 @@ public class MainApplication extends Application implements ReactApplication {
     @Override
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
-          new MainReactPackage()
+          new MainReactPackage(),
+<<<<<<< HEAD
+            new RNGestureHandlerPackage()
+=======
+            new MapsPackage()
+>>>>>>> e6e241f3056c95709e26b5059d1b2a4c62ecdaac
       );
     }
 

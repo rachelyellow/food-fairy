@@ -8,7 +8,11 @@
 
 # Creating Restaurants
 
+<<<<<<< HEAD
 res1 = Restaurant.create(name: "Rachel's Sushi Palace", reward: "$5.00 off first order", email: "rachel@gmail.com", password_digest:"hello", longitude:43.6, latitude:-79.40);
+=======
+res1 = Restaurant.create(name: "Rachel's Sushi Palace", reward: "$5.00 off first order", email: "rachel@gmail.com", password_digest: "hello", longitude: 43.6, latitude: -79.40);
+>>>>>>> 47c6f908bfb15aa3e0ca43835e86a558e1a1e1e1
 
 quiz1 = Quiz.create(restaurant_id:1);
 

@@ -39,6 +39,7 @@ class Quiz extends Component {
       console.log('calculating dish preference..')
       this.calculateDishPreference()
       console.log('redirecting to results page..')
+      // **INSERT FUNCTION TO REDIRECT TO RESULTS PAGE
     }
   }
 
@@ -50,9 +51,14 @@ class Quiz extends Component {
 
   calculateDishPreference = () => {
     const dishPreferences = this.state.answerLog
-    const dishReccomendation = this.mostFrequent(dishPreferences)
-    console.log(dishReccomendation)
-    // axios
+    const dishRecomendation = this.mostFrequent(dishPreferences)
+    // logs recommended dish to DB
+    axios.post('/results', {
+      dishRecomendation: dishRecomendation
+    })
+    .then(function(response) {
+      console.log("posted!")
+    })
   }
 
   mostFrequent = (dishIdArr) => {

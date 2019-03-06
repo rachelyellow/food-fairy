@@ -10,6 +10,7 @@ class Question extends Component{
 
     return(
       <div>
+       {/* <input value={this.props.question.inquiry} name={this.props.question.id} />  */}
        {this.props.question.inquiry}
        {this.props.question.options.map((item, idx) => {
          return <Option option={item} key={idx} qid={item.question_id} /> 

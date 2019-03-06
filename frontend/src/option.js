@@ -10,6 +10,7 @@ class Option extends Component{
 
     return(
       <div>
+       {/* <input value={this.props.option.name} name={this.props.option.id} /> */}
        {this.props.option.name}
        <input type="radio" name={this.props.qid}></input>
       </div>

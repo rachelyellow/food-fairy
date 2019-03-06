@@ -2,11 +2,16 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import Question from './question.js'
 
-
+// Quiz component is responsible for displaying quiz to users
 class Quiz extends Component{
 
   constructor(props) {
     super(props);
+    this.state = {
+      quiz: {
+        questions: []
+      }
+    }
   }
 
   render() {
@@ -24,4 +29,5 @@ class Quiz extends Component{
   }
 }
 
-export default Quiz 
+export default Quiz;
+

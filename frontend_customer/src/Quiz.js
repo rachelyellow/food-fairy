@@ -54,7 +54,9 @@ class Quiz extends Component {
     const dishRecomendation = this.mostFrequent(dishPreferences)
     // logs recommended dish to DB
     axios.post('/results', {
-      dishRecomendation: dishRecomendation
+      dishRecomendation: dishRecomendation,
+      customerId: this.state.activeUser,
+      quizId: this.state.currentQuiz
     })
     .then(function(response) {
       console.log("posted!")

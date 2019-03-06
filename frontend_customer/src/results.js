@@ -4,17 +4,19 @@ import axios from 'axios';
 class Results extends Component {
   constructor(){
     super()
+    this.state = {
+      data: null
+    }
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3001/results/1/dishes/1')
+    axios.get('http://localhost:3001/results/1')
     .then(res => {
-      if (res.status === 200)
-      {
-        // this.setState({
-        //   quiz: res.data
-        // })
-      }
+
+      console.log(res.data)
+        this.setState({
+         data: res.data
+        })
     })
     .catch(function (error) {
       // handle error
@@ -22,13 +24,23 @@ class Results extends Component {
     })
   }
   render() {
+    if (!this.state.data) {
+      return (<div>Loading....</div>)
+    } else {
     return(
-      <div>
-        <p> Based off your preferences, this is your reccomended Dish : (DISH)</p>
-        <p> This is the name of the Restaurant: (RESTAURANT)</p>
-        <p> This is your reward: (REW</p>
-      </div>
-    )
+        <div>
+          <p> Based off your preferences, this is your reccomended Dish : {this.state.data.dishes.map ((dish) => {
+            return dish.name 
+          } ).join(", ")}  </p>
+          <p> {this.state.data.dishes.map ((dish) => {
+            return <img src='dish.image'/>
+          } )} </p>
+          <p> This is the name of the Restaurant: {this.state.data.restaurant.name}</p>
+          
+          <p> This is your reward: {this.state.data.restaurant.reward}</p>
+        </div>
+      )
+    }
   }
 
   

@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-  get 'answers/create'
-
-  get 'results/create'
-
-  get 'results/show'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.htm
 
@@ -15,19 +10,12 @@ Rails.application.routes.draw do
   get '/customers/logout' => 'sessions#destroy'
 
   resources :questions, only: [:show]
-
-
-  resources :results do 
-    resources :dishes, only: [:show]
-  end
+  resources :results, only: [:show, :create]
+  resources :answers, only: [:create]
+  
   resources :restaurants do
     resources :quizzes, only:[:show, :create, :update]
   end
 
-
-
-  namespace :api do
-    resources :restaurants
-  end
 end
 

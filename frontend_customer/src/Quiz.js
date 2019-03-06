@@ -91,6 +91,8 @@ class Quiz extends Component {
         {this.state.quizData.questions.map((item, idx) => {
           const display = this.state.activeQuestion === idx;
           return <Question 
+          totalQuestions={this.state.quizData.questions.length}
+          currentQuestion={this.state.activeQuestion + 1}
           question={item} 
           key={idx} 
           display={display} 

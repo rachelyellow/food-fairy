@@ -11,7 +11,10 @@ class Question extends Component {
       return (
         <div>
           <p>{this.props.question.inquiry}</p>
-          <OptionsList options={this.props.question.options} nextQuestion={this.props.nextQuestion} />
+          <OptionsList 
+          options={this.props.question.options} 
+          nextQuestion={this.props.nextQuestion}
+          logAnswer={this.props.logAnswer} />
         </div>
       );
     }

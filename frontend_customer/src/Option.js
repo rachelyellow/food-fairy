@@ -5,12 +5,16 @@ class Option extends Component {
     super();
   }
 
+  saveAndNext = () => {
+    const option = this.props.option;
+    this.props.logAnswer(option)
+    this.props.nextQuestion(option)
+  }
   
   render() {
-    console.log(this.props.nextQuestion)
     return (
       <li>
-        <button onClick={this.props.nextQuestion} >{this.props.answer.name}</button>
+        <button onClick={this.saveAndNext} >{this.props.option.name}</button>
       </li>
     );
   }

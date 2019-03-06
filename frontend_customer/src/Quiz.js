@@ -20,7 +20,6 @@ class Quiz extends Component {
   componentDidMount() {
     axios(`/restaurants/${this.state.currentQuiz}/quizzes/${this.state.currentQuiz}`)
     .then(response => {
-        console.log(response.data)
         this.setState({
           quizData: response.data
         })
@@ -29,13 +28,20 @@ class Quiz extends Component {
     
   }
   
-  nextQuestion = () => {
+  nextQuestion = (option) => {
     if (this.state.activeQuestion < this.state.quizData.questions.length) {
+      let optionDishIds = this.logAnswer(option)
       this.setState({
         activeQuestion: this.state.activeQuestion + 1,
-        answerLog: this.state.answerLog.concat("answer")
+        answerLog: this.state.answerLog.concat(optionDishIds)
       })
     } 
+  }
+
+  logAnswer = (option) => {
+    let optionDishes = [];
+    option.dishes.forEach((dish) => optionDishes.push(dish.id))
+    return optionDishes;
   }
 
   render() {
@@ -43,7 +49,12 @@ class Quiz extends Component {
       <div>
         {this.state.quizData.questions.map((item, idx) => {
           const display = this.state.activeQuestion === idx;
-          return <Question question={item} key={idx} display={display} nextQuestion={this.nextQuestion} />
+          return <Question 
+          question={item} 
+          key={idx} 
+          display={display} 
+          nextQuestion={this.nextQuestion} 
+          logAnswer={this.logAnswer} />
        })}
       </div>
     );

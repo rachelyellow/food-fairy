@@ -9,8 +9,12 @@ class OptionsList extends Component {
   render() {
     return (
       <ul>
-        {this.props.options.map((answer, index) => {
-          return <Option answer={answer} nextQuestion={this.props.nextQuestion} key={answer.id} />
+        {this.props.options.map((option, index) => {
+          return <Option 
+          option={option} 
+          nextQuestion={this.props.nextQuestion} 
+          key={option.id}
+          logAnswer={this.props.logAnswer} />
         })}
       </ul>
     );

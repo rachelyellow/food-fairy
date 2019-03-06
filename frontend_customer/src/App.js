@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Map from './Map.js'
 import Rewards from './Rewards.js'
 import NavBar from './NavBar.js'
-import FakeQuiz from './FakeQuiz.js'
+import Quiz from './Quiz';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class App extends Component {
@@ -22,7 +22,7 @@ class App extends Component {
         </ul>
         <hr />
         <Route path="/maps" component={Map} />
-        <Route path="/restauant/:restaurant_id/quiz/:quiz_id" component={FakeQuiz} />
+        <Route path="/restauant/:restaurant_id/quiz/:quiz_id" component={Quiz} />
         <Route path="/rewards" component={Rewards} />
       </div>
     </Router>
@@ -34,5 +34,5 @@ class App extends Component {
     );
   }
 }
+export default App
 
-export default App;

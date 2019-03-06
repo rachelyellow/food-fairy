@@ -37,6 +37,7 @@ class Quiz extends Component {
       })
     } else {
       console.log('calculating dish preference..')
+      this.calculateDishPreference()
       console.log('redirecting to results page..')
     }
   }
@@ -63,7 +64,17 @@ class Quiz extends Component {
         count[dishId] = 1
       }
     })
-    return count
+    let mostFrequentDishId
+    let highest = 0
+    for (let dishId in count) {
+      // console.log("dish id:", dishId, "frequency:", count[dishId])
+      if (count[dishId] > highest) {
+        mostFrequentDishId = dishId
+        highest = count[dishId]
+      }
+    }
+    // console.log("recommendation:" ,mostFrequentDishId)
+    return mostFrequentDishId
   }
 
   render() {

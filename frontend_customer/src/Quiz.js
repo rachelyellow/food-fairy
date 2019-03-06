@@ -58,8 +58,9 @@ class Quiz extends Component {
       customerId: this.state.activeUser,
       quizId: this.state.currentQuiz
     })
-    .then(function(response) {
+    .then((response) => {
       console.log("posted!")
+      this.setState({ answerLog: [] })
     })
   }
 

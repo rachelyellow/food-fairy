@@ -1,8 +1,9 @@
 class ResultsController < ApplicationController
   def create
-    newResult = Result.new({
-      :customer_id => 1,
-      :quiz_id => 1
+    newResult = Result.create!({
+      :customer => Customer.find(1),
+      :quiz => Quiz.find(1),
+      :dishes =>  [Dish.find(params["dishRecomendation"].to_i)]
     })
   end
 

@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'results/create'
-  get 'results/show'
-
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.htm
 
   # Create a root that shows the google maps 

@@ -20,9 +20,9 @@ class App extends Component {
     .then(res => {
       if (res.status === 200)
       {
-        // this.setState({
-        //   quiz: res.data
-        // })
+        this.setState({
+          quiz: res.data
+        })
       }
     })
     .catch(function (error) {

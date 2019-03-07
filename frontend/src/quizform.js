@@ -28,7 +28,7 @@ class Quizform extends Component {
     }
 
     console.log("for loop data", data)
-    axios.post('http://localhost:3000/restaurants/1/quizzes/',
+    axios.post('http://localhost:3000/restaurants/1/quizzes',
       data
      )
   }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Map, GoogleApiWrapper } from 'google-maps-react';
-import { InfoWindow, Marker } from 'google-maps-react';
+import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
+import InfoWindow from "./InfoWindow.js";
 import axios from 'axios'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
@@ -90,6 +90,7 @@ export class MapContainer extends Component {
             />
               ) 
           }) }
+          
         <InfoWindow
           marker={this.state.activeMarker}
           visible={this.state.showingInfoWindow}
@@ -103,7 +104,7 @@ export class MapContainer extends Component {
             <img style={imageStyle} src={this.state.selectedPlace.image}/>
             <div>
               <Router>
-              <Link to= {to}>Quiz</Link>
+                <Link to= {to}>Quiz</Link>
               </Router>
             </div>
           </div> 

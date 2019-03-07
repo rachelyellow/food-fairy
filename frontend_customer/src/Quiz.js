@@ -12,22 +12,24 @@ class Quiz extends Component {
       activeUser: 1,
       answerLog: [],
       quizData: { questions: [] },
-      //ASSUMING RESTAURANT ID === QUIZ ID
-      currentQuiz : 1
+      //ASSUMING RESTAURANT ID === QUIZ ID BECAUSE THERE IS ONLY ONE QUIZ PER RESTAURANT
+      currentQuiz: null
     }
   }
 
   componentDidMount() {
-    axios(`/restaurants/${this.state.currentQuiz}/quizzes/${this.state.currentQuiz}`)
+    const id = this.props.match.params.restaurant_id
+    axios(`/restaurants/${id}/quizzes/${id}`)
     .then(response => {
+      console.log(response.data)
         this.setState({
-          quizData: response.data
+          quizData: response.data,
+          currentQuiz: id
         })
     })
     .catch(error => console.log(error))
     
   }
-  
   nextQuestion = (option) => {
     if (this.state.activeQuestion < this.state.quizData.questions.length - 1) {
       let optionDishIds = this.logAnswer(option)

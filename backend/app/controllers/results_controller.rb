@@ -9,7 +9,14 @@ class ResultsController < ApplicationController
 
   def show
     # LOGIC TO SEARCH FOR GIVEN RESULT AND RENDER SUGGESTED DISH
-    @result = Result.where(customer_id: 1, quiz_id: 1)
-    render json: @result
+    @result = Result.find params[:id]
+    @quiz = @result.quiz
+    @restaurant = @quiz.restaurant
+    puts @restaurant
+  
+    id = params[:id]
+    @dishes = Result.find(id).dishes
+    render json:  {:dishes => @dishes, :restaurant => @restaurant
+  }
   end
 end

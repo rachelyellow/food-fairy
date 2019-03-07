@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Question from "./Question.js";
 import OptionsList from "./OptionsList.js";
 import axios from 'axios'; 
+import { Route, Redirect } from 'react-router'
 
 
 class Quiz extends Component {
@@ -13,7 +14,8 @@ class Quiz extends Component {
       answerLog: [],
       quizData: { questions: [] },
       //ASSUMING RESTAURANT ID === QUIZ ID BECAUSE THERE IS ONLY ONE QUIZ PER RESTAURANT
-      currentQuiz: null
+      currentQuiz: null,
+      endOfQuiz: false
     }
   }
 
@@ -41,7 +43,8 @@ class Quiz extends Component {
       console.log('calculating dish preference..')
       this.calculateDishPreference()
       console.log('redirecting to results page..')
-      // **INSERT FUNCTION TO REDIRECT TO RESULTS PAGE
+      // **INSERT ROUTER TO REDIRECT TO REWARDS PAGE
+      this.setState({ endOfQuiz: true })
     }
   }
 
@@ -101,8 +104,10 @@ class Quiz extends Component {
           display={display} 
           nextQuestion={this.nextQuestion} 
           logAnswer={this.logAnswer} />
-       })}
+        })}
+          {this.state.endOfQuiz && <Redirect to="/rewards"/>}
       </div>
+        
     );
   }
 }

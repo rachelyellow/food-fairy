@@ -94,7 +94,6 @@ export class MapContainer extends Component {
           marker={this.state.activeMarker}
           visible={this.state.showingInfoWindow}
           onClose={this.onClose}
-          
         >
           <div>
             <h4>{this.state.selectedPlace.name}</h4>
@@ -103,9 +102,9 @@ export class MapContainer extends Component {
 
             <img style={imageStyle} src={this.state.selectedPlace.image}/>
             <div>
-                <Router>
-                <Link to= {to}>Quiz</Link>
-                </Router>
+              <Router>
+              <Link to= {to}>Quiz</Link>
+              </Router>
             </div>
           </div> 
         </InfoWindow>

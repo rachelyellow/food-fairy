@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
-import InfoWindow from "./InfoWindow.js";
+import { Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react';
 import axios from 'axios'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
@@ -21,29 +20,26 @@ export class MapContainer extends Component {
         activeMarker: {},          //Shows the active marker upon click
         selectedPlace: {},   //Shows the infoWindow to the selected place upon a marker
         restaurants : [],
-        formatted_address : ""
+        formatted_address : "",
+        activeUser: 1
       };
 
-
-
-    //   After the component is moundted, fetch the data from the backend
+    //   After the component is mounted, fetch the data from the backend
     componentDidMount() {
-        axios.get("http://localhost:3000/restaurants")
-        .then(response => {
-          this.setState({restaurants: response.data})
+      axios.get("http://localhost:3000/restaurants")
+      .then(response => {
+        this.setState({restaurants: response.data})
+      })
+      .catch(error => console.log(error))
+    }
 
-        })
-        .catch(error => console.log(error))
-      }
-
-
-      onMarkerClick = (props, marker, e) =>
+    onMarkerClick = (props, marker, e) =>
       this.setState({
         selectedPlace: props,
         activeMarker: marker,
         showingInfoWindow: true
-      });
-  
+    });
+
     onClose = props => {
       if (this.state.showingInfoWindow) {
         this.setState({
@@ -71,8 +67,8 @@ export class MapContainer extends Component {
             .then((response) => response.json())
             .then((responseJson) => {
                 console.log('ADDRESS GEOCODE is BACK!! => ' + JSON.stringify(responseJson.results[0].formatted_address));
-            
             })
+
             return (
               <Marker
                 key={restaurant.id}
@@ -91,7 +87,21 @@ export class MapContainer extends Component {
             ) 
           }) }
           
-          <InfoWindow marker={this.state.activeMarker} visible={this.state.showingInfoWindow} onClose={this.onClose} />
+            <InfoWindow marker={this.state.activeMarker} visible={this.state.showingInfoWindow} onClose={this.onClose} >
+              <div>
+                <div>
+                  <h4>{this.state.selectedPlace.name}</h4>
+                  <p>{this.state.selectedPlace.description}</p>
+                  <h3>{this.state.formatted_address}</h3>
+                  <img style={imageStyle} src={this.state.selectedPlace.image}/>
+                </div>
+                <div>
+                  <Router>
+                    <Link to={to}>Quiz</Link>
+                  </Router>
+                </div>
+              </div>
+            </InfoWindow>
           </Map>
         );
       }
@@ -100,3 +110,9 @@ export class MapContainer extends Component {
 export default GoogleApiWrapper({
   apiKey: 'AIzaSyDF0n1daTVqgT7582-gLCO-GOsUgsF2-LQ'
 })(MapContainer);
+
+// {!this.props.answeredRestaurants.includes(this.props.marker.id) &&
+//   <Router>
+//     <Link to={to}>Quiz</Link>
+//   </Router>
+//   }

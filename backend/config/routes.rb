@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :questions, only: [:show]
   resources :results, only: [:show, :create]
   resources :answers, only: [:create]
-
+  
   resources :restaurants do
     resources :quizzes, only:[:show, :create, :update]
   end

@@ -10,7 +10,11 @@ class Rewards extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3001/results/1')
+    axios.get('http://localhost:3000/results/', {
+      params: {
+        customer_id: 1
+      }
+    })
     .then(res => {
 
       console.log(res.data)

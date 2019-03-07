@@ -21,7 +21,9 @@ export class MapContainer extends Component {
         selectedPlace: {},   //Shows the infoWindow to the selected place upon a marker
         restaurants : [],
         formatted_address : "",
-        activeUser: 1
+        activeUser: 1,
+        quizResults: [],
+        completedQuizzes: []
       };
 
     //   After the component is mounted, fetch the data from the backend
@@ -31,6 +33,14 @@ export class MapContainer extends Component {
         this.setState({restaurants: response.data})
       })
       .catch(error => console.log(error))
+
+      axios.get('/results')
+      .then(response => {
+        this.setState({ quizResults: response.data.results }, this.getResultsForUser)
+      })
+      .catch(error => console.log(error))
+
+      // axios.get('/restaurants/1/quizzes')
     }
 
     onMarkerClick = (props, marker, e) =>
@@ -48,6 +58,16 @@ export class MapContainer extends Component {
         });
       }
     };
+
+    getResultsForUser = () => {
+      this.state.quizResults.forEach((result) => {
+        if (result.customer_id === this.state.activeUser) {
+          this.setState({ completedQuizzes: this.state.completedQuizzes.concat(result.restaurant.id) }, () => {
+            console.log(this.state.completedQuizzes)
+          })
+        }
+      })
+    }
   
     render() {
         let to = `/restauant/${this.state.selectedPlace.id}/quiz/${this.state.selectedPlace.id}`
@@ -95,11 +115,26 @@ export class MapContainer extends Component {
                   <h3>{this.state.formatted_address}</h3>
                   <img style={imageStyle} src={this.state.selectedPlace.image}/>
                 </div>
+                {!this.state.completedQuizzes.includes(this.state.activeMarker.id) && 
                 <div>
-                  <Router>
-                    <Link to={to}>Quiz</Link>
-                  </Router>
+                  <p>There is currently no quiz for this restaurant. Please check back at a later time.</p>
                 </div>
+                }
+                {!this.state.completedQuizzes.includes(this.state.activeMarker.id) &&
+                    <Router>
+                      <Link to={to}>Quiz</Link>
+                    </Router>
+                }
+                {this.state.completedQuizzes.includes(this.state.activeMarker.id) && 
+                <div>
+                  <p>You've already completed this quiz! Please check
+                    <Router>
+                      <Link to={'/rewards'}> MyRewards </Link>
+                    </Router>
+                    to view your rewards.
+                  </p>
+                </div>
+                }
               </div>
             </InfoWindow>
           </Map>

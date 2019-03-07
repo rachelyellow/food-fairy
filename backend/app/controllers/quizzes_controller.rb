@@ -8,10 +8,6 @@ class QuizzesController < ApplicationController
              }     
     end
 
-
-
-    
-
     def create
 
         quiz = Quiz.create(restaurant_id: params["restaurant_id"] );

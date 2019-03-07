@@ -73,42 +73,25 @@ export class MapContainer extends Component {
                 console.log('ADDRESS GEOCODE is BACK!! => ' + JSON.stringify(responseJson.results[0].formatted_address));
             
             })
-              return (
-             <Marker
-            key={restaurant.id}
-            onClick={this.onMarkerClick}
-            name= {restaurant.name} 
-            id = {restaurant.id}
-            image = {restaurant.image}
-            description = {restaurant.description}
-            position = {
-                {
+            return (
+              <Marker
+                key={restaurant.id}
+                onClick={this.onMarkerClick}
+                name= {restaurant.name} 
+                id = {restaurant.id}
+                image = {restaurant.image}
+                description = {restaurant.description}
+                position = {
+                  {
                     lat : restaurant.latitude,
                     lng : restaurant.longitude
+                  }
                 }
-            }
-            />
-              ) 
+              />
+            ) 
           }) }
           
-        <InfoWindow
-          marker={this.state.activeMarker}
-          visible={this.state.showingInfoWindow}
-          onClose={this.onClose}
-        >
-          <div>
-            <h4>{this.state.selectedPlace.name}</h4>
-            <p>{this.state.selectedPlace.description}</p>
-            <h3>{this.state.formatted_address}</h3>
-
-            <img style={imageStyle} src={this.state.selectedPlace.image}/>
-            <div>
-              <Router>
-                <Link to= {to}>Quiz</Link>
-              </Router>
-            </div>
-          </div> 
-        </InfoWindow>
+          <InfoWindow marker={this.state.activeMarker} visible={this.state.showingInfoWindow} onClose={this.onClose} />
           </Map>
         );
       }

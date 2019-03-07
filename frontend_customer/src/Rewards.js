@@ -1,21 +1,26 @@
 import React, {Component} from 'react';
 import axios from 'axios'; 
 
+
 class Rewards extends Component {
   constructor(){
     super()
     this.state = {
-      data: null
+      results: null
     }
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3001/results/1')
+    axios.get('http://localhost:3000/results/', {
+      params: {
+        customer_id: 1
+      }
+    })
     .then(res => {
 
-      console.log(res.data)
+      console.log(res.data.results)
         this.setState({
-         data: res.data
+         results: res.data.results
         })
     })
     .catch(function (error) {
@@ -24,27 +29,28 @@ class Rewards extends Component {
     })
   }
   render() {
-    if (!this.state.data) {
+    if (!this.state.results) {
       return (<div>Loading....</div>)
     } else {
     return(
-        <div>
-          <p> Based off your preferences, this is your reccomended Dish : {this.state.data.dishes.map ((dish) => {
-            return dish.name 
-          } ).join(", ")}  </p>
-          <p> {this.state.data.dishes.map ((dish) => {
-            return <img src='dish.image'/>
-          } )} </p>
-          <p> This is the name of the Restaurant: {this.state.data.restaurant.name}</p>
-          
-          <p> This is your reward: {this.state.data.restaurant.reward}</p>
+      <div>
+         {this.state.results.map((result) => (
+           <div>
+             <span>Restaurant: {result.restaurant.name}</span>
+            <span>Reward: {result.restaurant.reward} </span>
+            <span>Reccomended dish: {result.dish[0].name}</span>
+            <img src={result.dish[0].image}/>
+           </div>
+
+         ))}
         </div>
-      )
-    }
+    );
+    
   }
 
   
 }
 
+}
 
 export default Rewards

@@ -8,6 +8,15 @@ class QuizzesController < ApplicationController
              }     
     end
 
+
+    def index
+        @restaurant = Restaurant.find params[:restaurant_id]
+        @quizzes = Quiz.where(restaurant_id: @restaurant.id)
+       render :json =>  {:quizzes => @quizzes.as_json(include: {questions: {include: :options} })
+    }
+    end
+
+
     def create
         quiz = Quiz.create(restaurant_id: params["restaurant_id"] );
         3.times do |n|

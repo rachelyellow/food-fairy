@@ -10,8 +10,7 @@ Rails.application.routes.draw do
   get '/customers/logout' => 'sessions#destroy'
 
   resources :questions, only: [:show]
-  resources :results, only: [:show, :create]
-  resources :customers, only: [:show]
+  resources :results, only: [:index, :show, :create]
   
   resources :restaurants do
     resources :quizzes, only:[:show, :create, :update]

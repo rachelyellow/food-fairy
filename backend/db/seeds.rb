@@ -6,11 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# Creating Customer
+
+cus1 = Customer.create!(first_name: "Anisa", last_name: "Tahlil", email: "anisa@hotmail.com", password_digest: "12345")
+
 # Creating Restaurants
-
-
-res1 = Restaurant.create(name: "Rachel's Sushi Palace", reward: "$5.00 off first order", email: "rachel@gmail.com", password_digest: "hello", longitude: 43.6, latitude: -79.40);
-res2 = Restaurant.create(name:"Gagan's Res", reward: "$2.00 off first order", email:"gagan@gmail.com", password_digest:"hithere", longitude:-50.0, latitude:80.0);
+res1 = Restaurant.create(name: "Rachel's Sushi Palace", reward: "$5.00 off first order", email: "rachel@gmail.com", password_digest: "hello",latitude: 43.644367,longitude:  -79.424721, description:"Japanese Restaurant", image:"https://img.jakpost.net/c/2017/02/28/2017_02_28_22453_1488267265._large.jpg");
+res2 = Restaurant.create(name:"Gagan's Res", reward: "$2.00 off first order", email:"gagan@gmail.com", password_digest:"hithere",latitude: 43.645581, longitude: -79.400644, description:"Italian Restaurant" ,image:"https://amp.businessinsider.com/images/56182ad29dd7cc1b008c0dae-750-526.jpg" );
 
 quiz1 = Quiz.create(restaurant_id:1);
 

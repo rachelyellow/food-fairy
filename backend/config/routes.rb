@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :answers, only: [:create]
   
   resources :restaurants do
-    resources :quizzes, only:[:show, :create, :update]
+    resources :quizzes, only:[:show, :create, :update, :index]
   end
 
 end

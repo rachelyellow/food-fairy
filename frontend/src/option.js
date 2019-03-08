@@ -6,12 +6,14 @@ class Option extends Component{
   render() {
 
     return(
-      <div>
+      <ListGroup.Item>
        {/* <input value={this.props.option.name} name={this.props.option.id} /> */}
        {this.props.options.map(element => {
-         return <ListGroup.Item key={element.id}>{element.name}</ListGroup.Item>
+         return <p key={element.id}>
+         {element.name}
+        </p>
        })}
-      </div>
+      </ListGroup.Item>
     )
   }
 }

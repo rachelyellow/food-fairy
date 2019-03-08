@@ -1,13 +1,21 @@
 import React, { Component } from 'react';
-
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 export class NavBar extends Component {
-
     render(){
         return (
-            <div className="sidenav">
-            <a href="#about">Map</a>
-            <a href="#services">MyRewards</a>
-          </div>
+        
+            <div>
+              <ul>  
+                <li>
+                <Link to="/maps">Maps</Link>
+                </li>
+                <li>
+                <Link to="/rewards">Rewards</Link>
+                </li>
+              </ul>
+              <hr />
+              </div>
+
         );
     }
 

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
+import NavBar from './NavBar.js';
 import axios from 'axios'; 
-
+import Statusbar from "./Statusbar.js";
 
 class Rewards extends Component {
   constructor(){
@@ -32,25 +33,23 @@ class Rewards extends Component {
     if (!this.state.results) {
       return (<div>Loading....</div>)
     } else {
-    return(
-      <div>
-         {this.state.results.map((result) => (
-           <div>
-             <span>Restaurant: {result.restaurant.name}</span>
-            <span>Reward: {result.restaurant.reward} </span>
-            <span>Reccomended dish: {result.dish[0].name}</span>
-            <img src={result.dish[0].image}/>
-           </div>
+      return(
+        <div>
+          <Statusbar/>
+          <NavBar/>
+          {this.state.results.map((result) => (
+            <div>
+              <span>Restaurant: {result.restaurant.name}</span>
+              <span>Reward: {result.restaurant.reward} </span>
+              <span>Reccomended dish: {result.dish[0].name}</span>
+              <img src={result.dish[0].image}/>
+            </div>
 
-         ))}
-        </div>
-    );
-    
+          ))}
+          </div>
+      );
+    }
   }
-
-  
-}
-
 }
 
 export default Rewards

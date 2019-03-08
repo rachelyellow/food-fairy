@@ -1,13 +1,19 @@
 class QuizzesController < ApplicationController
     def show 
-        @restaurant = Restaurant.find params[:restaurant_id]
-        id = params[:id]
-        @quiz = Quiz.where(restaurant_id: @restaurant.id, id: id)
-        @questions = Question.where(quiz_id: @quiz.ids)
-             render :json => {:questions => @questions.as_json(include: {options: {include: :dishes} }),
-             }     
+        @restaurant_id = params[:restaurant_id]
+        puts @restaurant_id
+        if @restaurant_id == nil
+            @quizzes = Quiz.all
+            render :json => {:quizzes => @quizzes.as_json}
+        else
+            @restaurant = Restaurant.find @restaurant_id
+            id = params[:id]
+            @quiz = Quiz.where(restaurant_id: @restaurant.id, id: id)
+            @questions = Question.where(quiz_id: @quiz.ids)
+                render :json => {:questions => @questions.as_json(include: {options: {include: :dishes} }),
+                } 
+        end
     end
-
 
     def index
         @restaurant = Restaurant.find params[:restaurant_id]

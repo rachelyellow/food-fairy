@@ -23,7 +23,9 @@ export class MapContainer extends Component {
         formatted_address : "",
         activeUser: 1,
         quizResults: [],
-        completedQuizzes: []
+        completedQuizzes: [],
+        //RESTAURANT IDs THAT HAVE CREATED A QUIZ
+        availableQuizzes: []
       };
 
     //   After the component is mounted, fetch the data from the backend
@@ -40,7 +42,11 @@ export class MapContainer extends Component {
       })
       .catch(error => console.log(error))
 
-      // axios.get('/restaurants/1/quizzes')
+      axios.get('/quizzes')
+      .then(response => {
+        response.data.quizzes.map((quiz) => this.setState({availableQuizzes: this.state.availableQuizzes.concat(quiz.restaurant_id) }))
+        // this.setState({ availableQuizzes: response.data.quizzes }, () => console.log(this.state.availableQuizzes))
+      })
     }
 
     onMarkerClick = (props, marker, e) =>
@@ -51,6 +57,7 @@ export class MapContainer extends Component {
     });
 
     onClose = props => {
+      console.log('aq ',this.state.availableQuizzes, 'activemarkerID: ', this.state.activeMarker.id)
       if (this.state.showingInfoWindow) {
         this.setState({
           showingInfoWindow: false,
@@ -60,10 +67,10 @@ export class MapContainer extends Component {
     };
 
     getResultsForUser = () => {
-      this.state.quizResults.forEach((result) => {
+      this.state.quizResults.map((result) => {
         if (result.customer_id === this.state.activeUser) {
+          //STILL ASSUMING QUIZ ID === RESTO ID
           this.setState({ completedQuizzes: this.state.completedQuizzes.concat(result.restaurant.id) }, () => {
-            console.log(this.state.completedQuizzes)
           })
         }
       })
@@ -115,12 +122,12 @@ export class MapContainer extends Component {
                   <h3>{this.state.formatted_address}</h3>
                   <img style={imageStyle} src={this.state.selectedPlace.image}/>
                 </div>
-                {!this.state.completedQuizzes.includes(this.state.activeMarker.id) && 
+                {!this.state.availableQuizzes.includes(this.state.activeMarker.id) && 
                 <div>
                   <p>There is currently no quiz for this restaurant. Please check back at a later time.</p>
                 </div>
                 }
-                {!this.state.completedQuizzes.includes(this.state.activeMarker.id) &&
+                {!this.state.completedQuizzes.includes(this.state.activeMarker.id) && this.state.availableQuizzes.includes(this.state.activeMarker.id) &&
                     <Router>
                       <Link to={to}>Quiz</Link>
                     </Router>

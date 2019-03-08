@@ -11,8 +11,12 @@ class Option extends Component{
     return(
       <div>
        {/* <input value={this.props.option.name} name={this.props.option.id} /> */}
-       {this.props.option.name}
-       <input type="radio" name={this.props.qid}></input>
+       {this.props.options.map(element => {
+         return <div> 
+           <h4>{element.name} </h4>
+          <input type="radio" name={element.question_id}></input> 
+          </div>
+       })}
       </div>
     )
   }

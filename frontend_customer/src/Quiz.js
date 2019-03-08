@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import Question from "./Question.js";
-import OptionsList from "./OptionsList.js";
 import axios from 'axios'; 
-import { Route, Redirect } from 'react-router'
+import {Redirect } from 'react-router'
 
 
 class Quiz extends Component {
@@ -23,7 +22,6 @@ class Quiz extends Component {
     const id = this.props.match.params.restaurant_id
     axios(`/restaurants/${id}/quizzes/${id}`)
     .then(response => {
-      console.log(response.data)
         this.setState({
           quizData: response.data,
           currentQuiz: id

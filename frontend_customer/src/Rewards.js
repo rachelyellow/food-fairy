@@ -18,8 +18,6 @@ class Rewards extends Component {
       }
     })
     .then(res => {
-
-      console.log(res.data.results)
         this.setState({
          results: res.data.results
         })
@@ -38,11 +36,11 @@ class Rewards extends Component {
           <Statusbar/>
           <NavBar/>
           {this.state.results.map((result) => (
-            <div>
+            <div key={result.id} >
               <span>Restaurant: {result.restaurant.name}</span>
               <span>Reward: {result.restaurant.reward} </span>
               <span>Reccomended dish: {result.dish[0].name}</span>
-              <img src={result.dish[0].image}/>
+              <img alt='food' src={result.dish[0].image}/>
             </div>
 
           ))}

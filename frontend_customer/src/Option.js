@@ -1,11 +1,7 @@
 import React, {Component} from 'react';
 
 class Option extends Component {
-  constructor() {
-    super();
-  }
-
-  saveAndNext = () => {
+   saveAndNext = () => {
     const option = this.props.option;
     this.props.logAnswer(option)
     this.props.nextQuestion(option)

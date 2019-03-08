@@ -3,10 +3,6 @@ import OptionsList from "./OptionsList.js";
 import Breadcrumbs from "./Breadcrumbs.js";
 
 class Question extends Component {
-  constructor() {
-    super();
-  }
-
   render() {
     if (this.props.display) {
       return (

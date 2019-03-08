@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Map, GoogleApiWrapper } from 'google-maps-react';
-import { InfoWindow, Marker } from 'google-maps-react';
+import { Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react';
 import axios from 'axios'
 import NavBar from './NavBar.js';
 import Statusbar from "./Statusbar.js";
@@ -23,30 +22,44 @@ export class MapContainer extends Component {
         activeMarker: {},          //Shows the active marker upon click
         selectedPlace: {},   //Shows the infoWindow to the selected place upon a marker
         restaurants : [],
-        formatted_address : ""
+        formatted_address : "",
+        activeUser: 1,
+        quizResults: [],
+        completedQuizzes: [],
+        //RESTAURANT IDs THAT HAVE CREATED A QUIZ
+        availableQuizzes: []
       };
 
-
-
-    //   After the component is moundted, fetch the data from the backend
+    //   After the component is mounted, fetch the data from the backend
     componentDidMount() {
-        axios.get("http://localhost:3000/restaurants")
-        .then(response => {
-          this.setState({restaurants: response.data})
+      axios.get("http://localhost:3000/restaurants")
+      .then(response => {
+        this.setState({restaurants: response.data})
+      })
+      .catch(error => console.log(error))
 
-        })
-        .catch(error => console.log(error))
-      }
+      axios.get('/results')
+      .then(response => {
+        this.setState({ quizResults: response.data.results }, this.getResultsForUser)
+      })
+      .catch(error => console.log(error))
 
+      axios.get('/quizzes')
+      .then(response => {
+        response.data.quizzes.map((quiz) => this.setState({availableQuizzes: this.state.availableQuizzes.concat(quiz.restaurant_id) }))
+        // this.setState({ availableQuizzes: response.data.quizzes }, () => console.log(this.state.availableQuizzes))
+      })
+    }
 
-      onMarkerClick = (props, marker, e) =>
+    onMarkerClick = (props, marker, e) =>
       this.setState({
         selectedPlace: props,
         activeMarker: marker,
         showingInfoWindow: true
-      });
-  
+    });
+
     onClose = props => {
+      console.log('aq ',this.state.availableQuizzes, 'activemarkerID: ', this.state.activeMarker.id)
       if (this.state.showingInfoWindow) {
         this.setState({
           showingInfoWindow: false,
@@ -54,6 +67,16 @@ export class MapContainer extends Component {
         });
       }
     };
+
+    getResultsForUser = () => {
+      this.state.quizResults.map((result) => {
+        if (result.customer_id === this.state.activeUser) {
+          //STILL ASSUMING QUIZ ID === RESTO ID
+          this.setState({ completedQuizzes: this.state.completedQuizzes.concat(result.restaurant.id) }, () => {
+          })
+        }
+      })
+    }
   
     render() {
         let to = `/restauant/${this.state.selectedPlace.id}/quiz/${this.state.selectedPlace.id}`
@@ -76,43 +99,56 @@ export class MapContainer extends Component {
             .then((response) => response.json())
             .then((responseJson) => {
                 console.log('ADDRESS GEOCODE is BACK!! => ' + JSON.stringify(responseJson.results[0].formatted_address));
-            
             })
-              return (
-             <Marker
-            key={restaurant.id}
-            onClick={this.onMarkerClick}
-            name= {restaurant.name} 
-            id = {restaurant.id}
-            image = {restaurant.image}
-            description = {restaurant.description}
-            position = {
-                {
+
+            return (
+              <Marker
+                key={restaurant.id}
+                onClick={this.onMarkerClick}
+                name= {restaurant.name} 
+                id = {restaurant.id}
+                image = {restaurant.image}
+                description = {restaurant.description}
+                position = {
+                  {
                     lat : restaurant.latitude,
                     lng : restaurant.longitude
+                  }
                 }
-            }
-            />
-              ) 
+              />
+            ) 
           }) }
-        <InfoWindow
-          marker={this.state.activeMarker}
-          visible={this.state.showingInfoWindow}
-          onClose={this.onClose}
-        >
-          <div>
-            <h4>{this.state.selectedPlace.name}</h4>
-            <p>{this.state.selectedPlace.description}</p>
-            <h3>{this.state.formatted_address}</h3>
-
-            <img style={imageStyle} src={this.state.selectedPlace.image}/>
-            <div>
-              <Router>
-              <Link to= {to}>Quiz</Link>
-              </Router>
-            </div>
-          </div> 
-        </InfoWindow>
+          
+            <InfoWindow marker={this.state.activeMarker} visible={this.state.showingInfoWindow} onClose={this.onClose} >
+              <div>
+                <div>
+                  <h4>{this.state.selectedPlace.name}</h4>
+                  <p>{this.state.selectedPlace.description}</p>
+                  <h3>{this.state.formatted_address}</h3>
+                  <img style={imageStyle} src={this.state.selectedPlace.image}/>
+                </div>
+                {!this.state.availableQuizzes.includes(this.state.activeMarker.id) && 
+                <div>
+                  <p>There is currently no quiz for this restaurant. Please check back at a later time.</p>
+                </div>
+                }
+                {!this.state.completedQuizzes.includes(this.state.activeMarker.id) && this.state.availableQuizzes.includes(this.state.activeMarker.id) &&
+                    <Router>
+                      <Link to={to}>Quiz</Link>
+                    </Router>
+                }
+                {this.state.completedQuizzes.includes(this.state.activeMarker.id) && 
+                <div>
+                  <p>You've already completed this quiz! Please check
+                    <Router>
+                      <Link to={'/rewards'}> MyRewards </Link>
+                    </Router>
+                    to view your rewards.
+                  </p>
+                </div>
+                }
+              </div>
+            </InfoWindow>
           </Map>
           </div>
         );
@@ -122,3 +158,9 @@ export class MapContainer extends Component {
 export default GoogleApiWrapper({
   apiKey: 'AIzaSyDF0n1daTVqgT7582-gLCO-GOsUgsF2-LQ'
 })(MapContainer);
+
+// {!this.props.answeredRestaurants.includes(this.props.marker.id) &&
+//   <Router>
+//     <Link to={to}>Quiz</Link>
+//   </Router>
+//   }

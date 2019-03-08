@@ -47,7 +47,6 @@ export class MapContainer extends Component {
       axios.get('/quizzes')
       .then(response => {
         response.data.quizzes.map((quiz) => this.setState({availableQuizzes: this.state.availableQuizzes.concat(quiz.restaurant_id) }))
-        // this.setState({ availableQuizzes: response.data.quizzes }, () => console.log(this.state.availableQuizzes))
       })
     }
 
@@ -59,7 +58,6 @@ export class MapContainer extends Component {
     });
 
     onClose = props => {
-      console.log('aq ',this.state.availableQuizzes, 'activemarkerID: ', this.state.activeMarker.id)
       if (this.state.showingInfoWindow) {
         this.setState({
           showingInfoWindow: false,
@@ -119,7 +117,7 @@ export class MapContainer extends Component {
                   <h4>{this.state.selectedPlace.name}</h4>
                   <p>{this.state.selectedPlace.description}</p>
                   <h3>{this.state.formatted_address}</h3>
-                  <img style={imageStyle} src={this.state.selectedPlace.image}/>
+                  <img style={imageStyle} alt={this.state.activeMarker.id} src={this.state.selectedPlace.image}/>
                 </div>
                 {!this.state.availableQuizzes.includes(this.state.activeMarker.id) && 
                 <div>

@@ -40,7 +40,7 @@ class Rewards extends Component {
               <span>Restaurant: {result.restaurant.name}</span>
               <span>Reward: {result.restaurant.reward} </span>
               <span>Reccomended dish: {result.dish[0].name}</span>
-              <img src={result.dish[0].image}/>
+              <img alt='food' src={result.dish[0].image}/>
             </div>
 
           ))}

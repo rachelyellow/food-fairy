@@ -2,10 +2,6 @@ import React, {Component} from 'react';
 import Option from "./Option.js";
 
 class OptionsList extends Component {
-  constructor() {
-    super();
-  }
-
   render() {
     return (
       <ul>

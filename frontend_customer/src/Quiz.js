@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import Question from "./Question.js";
-import OptionsList from "./OptionsList.js";
 import axios from 'axios'; 
-import { Route, Redirect } from 'react-router'
+import {Redirect } from 'react-router'
 
 
 class Quiz extends Component {

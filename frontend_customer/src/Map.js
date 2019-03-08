@@ -3,7 +3,7 @@ import { Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react';
 import axios from 'axios'
 import NavBar from './NavBar.js';
 import Statusbar from "./Statusbar.js";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
 const mapStyles = {
   width: '80%',
@@ -72,9 +72,9 @@ export class MapContainer extends Component {
       this.state.quizResults.map((result) => {
         if (result.customer_id === this.state.activeUser) {
           //STILL ASSUMING QUIZ ID === RESTO ID
-          this.setState({ completedQuizzes: this.state.completedQuizzes.concat(result.restaurant.id) }, () => {
-          })
+          this.setState({ completedQuizzes: this.state.completedQuizzes.concat(result.restaurant.id) })
         }
+      return true
       })
     }
   
@@ -94,12 +94,6 @@ export class MapContainer extends Component {
             }}
           >
           { this.state.restaurants.map((restaurant) => {
-
-            fetch('https://maps.googleapis.com/maps/api/geocode/json?address=' + restaurant.latitude + ',' + restaurant.longitude + '&key=' + "AIzaSyDF0n1daTVqgT7582-gLCO-GOsUgsF2-LQ")
-            .then((response) => response.json())
-            .then((responseJson) => {
-                console.log('ADDRESS GEOCODE is BACK!! => ' + JSON.stringify(responseJson.results[0].formatted_address));
-            })
 
             return (
               <Marker

@@ -34,13 +34,8 @@ class Quizform extends Component {
   }
 
   render() {
-    const child = <div className='modal'>
-        Hello, World!
-    </div>
-
     return(
       <div>
-
       <form onSubmit={this.handleSubmit}>
         Question 1: <input type="text" name="question[1][name]"/>
         Option 1: <input type="text" name="question[1][options][1]"/>

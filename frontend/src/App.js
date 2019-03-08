@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import axios from 'axios'; 
-import Login from  './login.js';
 import Quiz from './quiz.js'
 import QuizForm from './quizform.js'
 
@@ -16,11 +14,8 @@ class App extends Component {
   }
 
   componentDidMount() {
-    console.log("hkhk")
-    axios.get('http://localhost:3000/restaurants/2/quizzes')
+    axios.get('http://localhost:3000/restaurants/1/quizzes')
     .then(res => {
-      console.log("this is the response", res.data)
-      
         this.setState({
           quiz: res.data.quizzes
         })
@@ -39,7 +34,6 @@ class App extends Component {
   // }
 
   render() {
-    console.log("this is state", this.state.quiz)
     return (
       <div>
          { (this.state.quiz.length > 0)

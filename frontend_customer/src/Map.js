@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Map, GoogleApiWrapper } from 'google-maps-react';
 import { InfoWindow, Marker } from 'google-maps-react';
 import axios from 'axios'
+import NavBar from './NavBar.js';
+import Statusbar from "./Statusbar.js";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const mapStyles = {
@@ -56,6 +58,9 @@ export class MapContainer extends Component {
     render() {
         let to = `/restauant/${this.state.selectedPlace.id}/quiz/${this.state.selectedPlace.id}`
         return (
+          <div>
+          <Statusbar/>
+          <NavBar/>
           <Map
             google={this.props.google}
             zoom={14}
@@ -109,6 +114,7 @@ export class MapContainer extends Component {
           </div> 
         </InfoWindow>
           </Map>
+          </div>
         );
       }
     }

@@ -44,7 +44,6 @@ class Quiz extends Component {
       this.calculateDishPreference()
       console.log('redirecting to results page..')
       // **INSERT ROUTER TO REDIRECT TO REWARDS PAGE
-      this.setState({ endOfQuiz: true })
     }
   }
 
@@ -65,7 +64,8 @@ class Quiz extends Component {
     })
     .then((response) => {
       console.log("posted!")
-      this.setState({ answerLog: [] })
+      this.setState({ answerLog: [] ,
+           endOfQuiz: true })
     })
   }
 

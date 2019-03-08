@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
 import Question from './question.js'
+import ListGroup from 'react-bootstrap/ListGroup';
 
 // Quiz component is responsible for displaying quiz to users
 class Quiz extends Component{
 
   render() {  
     return(
-      <div>
+      <ListGroup variant="flush">
         {
           this.props.quiz.map((item, idx) => {
             return <Question question={item} key={idx} />
           })
         }
-      </div>
+      </ListGroup>
     )
   }
 }

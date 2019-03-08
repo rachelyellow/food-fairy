@@ -117,19 +117,19 @@ export class MapContainer extends Component {
                   <h4>{this.state.selectedPlace.name}</h4>
                   <p>{this.state.selectedPlace.description}</p>
                   <h3>{this.state.formatted_address}</h3>
-                  <img style={imageStyle} alt={this.state.activeMarker.id} src={this.state.selectedPlace.image}/>
+                  <img style={imageStyle} alt="" src={this.state.selectedPlace.image}/>
                 </div>
-                {!this.state.availableQuizzes.includes(this.state.activeMarker.id) && 
+                {this.state.activeMarker && !this.state.availableQuizzes.includes(this.state.activeMarker.id) && 
                 <div>
                   <p>There is currently no quiz for this restaurant. Please check back at a later time.</p>
                 </div>
                 }
-                {!this.state.completedQuizzes.includes(this.state.activeMarker.id) && this.state.availableQuizzes.includes(this.state.activeMarker.id) &&
+                {this.state.activeMarker && !this.state.completedQuizzes.includes(this.state.activeMarker.id) && this.state.availableQuizzes.includes(this.state.activeMarker.id) &&
                     <Router>
                       <Link to={to}>Quiz</Link>
                     </Router>
                 }
-                {this.state.completedQuizzes.includes(this.state.activeMarker.id) && 
+                {this.state.activeMarker && this.state.completedQuizzes.includes(this.state.activeMarker.id) && 
                 <div>
                   <p>You've already completed this quiz! Please check
                     <Router>

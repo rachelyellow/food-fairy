@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ListGroup from 'react-bootstrap/ListGroup';
 
 
 class Option extends Component{
@@ -8,9 +9,7 @@ class Option extends Component{
       <div>
        {/* <input value={this.props.option.name} name={this.props.option.id} /> */}
        {this.props.options.map(element => {
-         return <div key={element.id}> 
-           <h4>{element.name} </h4>
-          </div>
+         return <ListGroup.Item key={element.id}>{element.name}</ListGroup.Item>
        })}
       </div>
     )

@@ -22,7 +22,6 @@ class Quiz extends Component {
     const id = this.props.match.params.restaurant_id
     axios(`/restaurants/${id}/quizzes/${id}`)
     .then(response => {
-      console.log(response.data)
         this.setState({
           quizData: response.data,
           currentQuiz: id

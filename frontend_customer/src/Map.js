@@ -150,9 +150,3 @@ export class MapContainer extends Component {
 export default GoogleApiWrapper({
   apiKey: 'AIzaSyDF0n1daTVqgT7582-gLCO-GOsUgsF2-LQ'
 })(MapContainer);
-
-// {!this.props.answeredRestaurants.includes(this.props.marker.id) &&
-//   <Router>
-//     <Link to={to}>Quiz</Link>
-//   </Router>
-//   }

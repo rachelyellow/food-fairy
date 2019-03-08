@@ -5,6 +5,7 @@ class ResultsController < ApplicationController
       :quiz => Quiz.find(params["quizId"].to_i),
       :dishes =>  [Dish.find(params["dishRecomendation"].to_i)]
     })
+    render json: {:newResult => newResult.id}
   end
 
   def index
@@ -46,5 +47,15 @@ class ResultsController < ApplicationController
   #   @dishes = Result.find(id).dishes
   #   render json:  {:dishes => @dishes, :restaurant => @restaurant
   # }
+  end
+
+  def show 
+    @result = Result.find params[:id]
+    @quiz = @result.quiz
+    @restaurant = @quiz.restaurant
+    @dish = @result.dishes
+    render json: {:dish => @dish,
+                  :restaurant => @restaurant}
+
   end
 end

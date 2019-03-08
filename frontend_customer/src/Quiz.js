@@ -14,7 +14,8 @@ class Quiz extends Component {
       quizData: { questions: [] },
       //ASSUMING RESTAURANT ID === QUIZ ID BECAUSE THERE IS ONLY ONE QUIZ PER RESTAURANT
       currentQuiz: null,
-      endOfQuiz: false
+      endOfQuiz: false,
+      resultID : null
     }
   }
 
@@ -41,7 +42,6 @@ class Quiz extends Component {
       console.log('calculating dish preference..')
       this.calculateDishPreference()
       console.log('redirecting to results page..')
-      // **INSERT ROUTER TO REDIRECT TO REWARDS PAGE
     }
   }
 
@@ -60,10 +60,13 @@ class Quiz extends Component {
       customerId: this.state.activeUser,
       quizId: this.state.currentQuiz
     })
+    
     .then((response) => {
       console.log("posted!")
+      console.log(response.data.newResult)
       this.setState({ answerLog: [] ,
-           endOfQuiz: true })
+           endOfQuiz: true,
+          resultID: response.data.newResult })
     })
   }
 
@@ -90,6 +93,7 @@ class Quiz extends Component {
   }
 
   render() {
+    let to = `/results/${this.state.resultID}`
     return (
       <div>
         {this.state.quizData.questions.map((item, idx) => {
@@ -103,7 +107,7 @@ class Quiz extends Component {
           nextQuestion={this.nextQuestion} 
           logAnswer={this.logAnswer} />
         })}
-          {this.state.endOfQuiz && <Redirect to="/rewards"/>}
+          {this.state.endOfQuiz && <Redirect to={to}/>}
       </div>
         
     );

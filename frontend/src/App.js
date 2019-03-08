@@ -10,20 +10,21 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      quiz: null,
+      quiz: [],
       editingQuiz: false
     };
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3000/restaurants/1/quizzes/1')
+    console.log("hkhk")
+    axios.get('http://localhost:3000/restaurants/2/quizzes')
     .then(res => {
-      if (res.status === 200)
-      {
+      console.log("this is the response", res.data)
+      
         this.setState({
-          quiz: res.data
+          quiz: res.data.quizzes
         })
-      }
+    
     })
     .catch(function (error) {
       // handle error
@@ -31,25 +32,23 @@ class App extends Component {
     })
   }
 
-  toggleEditing = () => {
-    this.setState({
-      editingQuiz: !this.state.editingQuiz
-    })
-  }
-
-
-  saveQuiz = (quiz) => {
-    console.log('saving!');
-  }
+  // toggleEditing = () => {
+  //   this.setState({
+  //     editingQuiz: !this.state.editingQuiz
+  //   })
+  // }
 
   render() {
+    console.log("this is state", this.state.quiz)
     return (
       <div>
-        {
-          (this.state.quiz && !this.state.editingQuiz)
-            ? <Quiz quiz={this.state.quiz} />
-            : <QuizForm quiz={this.state.quiz} handleSubmit={this.saveQuiz} />
-        }
+         { (this.state.quiz.length > 0)
+             ? 
+            <Quiz quiz={this.state.quiz} />
+             : 
+             <QuizForm quiz={this.state.quiz}  />
+         }
+        
             
 
         {/* <button onClick={this.toggleEditing}>

@@ -5,22 +5,16 @@ import Question from './question.js'
 // Quiz component is responsible for displaying quiz to users
 class Quiz extends Component{
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      quiz: {
-        questions: []
-      }
-    }
-  }
-
   render() {
     
+    console.log("data",this.props.quiz)
     
     return(
       <div>
+
         {
-          this.props.quiz.questions.map((item, idx) => {
+          this.props.quiz.map((item, idx) => {
+            console.log("item", item)
             return <Question question={item} key={idx} />
           })
         }

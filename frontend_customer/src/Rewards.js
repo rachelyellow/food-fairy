@@ -38,6 +38,7 @@ class Rewards extends Component {
           <Statusbar/>
           <NavBar/>
           <div>
+            <h1>Your Rewards</h1>
               <Table striped bordered hover size="sm">
                 <thead>
                     <tr>
@@ -50,7 +51,7 @@ class Rewards extends Component {
                   <tbody>
                     {this.state.results.map((result, idx) => (
                       <tr>
-                        <td>{idx}</td>
+                        <td>{idx + 1}</td>
                         <td>{result.restaurant.name}</td>
                         <td>{result.restaurant.reward}</td>
                         <td>{result.dish[0].name} <img alt='food' src={result.dish[0].image}/></td>

@@ -29,7 +29,7 @@ class Quizform extends Component {
     }
 
     console.log("for loop data", data)
-    axios.post('http://localhost:3000/restaurants/1/quizzes',
+    axios.post('http://localhost:3000/restaurants/2/quizzes',
       data
      )
   }
@@ -68,6 +68,7 @@ class Quizform extends Component {
           </tr>
         </tbody>
       </Table>
+      <button type="submit"> Submit </button>
       </form>
         
         {/* <form onSubmit={this.handleSubmit}>

@@ -32,7 +32,6 @@ class QuizzesController < ApplicationController
             question.save
             (1..3).each do |j|
                option = question.options.new(name: params["question[#{n}][options][#{j}]"])
-               
                puts "this is the option, #{option}"
                option.save
                (1..3).each do |k|

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Table from 'react-bootstrap/Table'
 
 import axios from 'axios'; 
 
@@ -37,32 +38,64 @@ class Quizform extends Component {
     return(
       <div>
       <form onSubmit={this.handleSubmit}>
-        Question 1: <input type="text" name="question[1][name]"/>
-        Option 1: <input type="text" name="question[1][options][1]"/>
-        Dish 1:<input type="text" name="question[1][options][1][dish][1]"/>
-        Option 2: <input type="text" name="question[1][options][2]"/>
-        Dish 2:<input type="text" name="question[1][options][2][dish][2]"/>
-        Option 3: <input type="text" name="question[1][options][3]"/>
-        Dish 3:<input type="text" name="question[1][options][3][dish][3]"/>
-    
-        Question 2: <input type="text" name="question[2][name]"/>
-        Option 1: <input type="text" name="question[2][options][1]"/>
-        Dish 1:<input type="text" name="question[2][options][1][dish][1]"/>
-        Option 2:<input type="text" name="question[2][options][2]"/>
-        Dish 2:<input type="text" name="question[2][options][2][dish][2]"/>
-        Option 3:<input type="text" name="question[2][options][3]"/>
-        Dish 3:<input type="text" name="question[2][options][3][dish][3]"/>
-
-        Question 3: <input type="text" name="question[3][name]"/>
-        Option 1: <input type="text" name="question[3][options][1]"/>
-        Dish 1:<input type="text" name="question[3][options][1][dish][1]"/>
-        Option 2: <input type="text" name="question[3][options][2]"/>
-        Dish 2:<input type="text" name="question[3][options][2][dish][2]"/>
-        Option 3: <input type="text" name="question[3][options][3]"/>
-        Dish 3:<input type="text" name="question[3][options][3][dish][3]"/>
-         <button type="submit"> Submit </button>
-
+      <Table striped bordered hover>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Question</th>
+            <th>Options</th>
+            <th>Recommended Dish</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><textarea type="text" rows="3" name="question[1][name]"/></td>
+            <td>1 <input type="text" name="question[1][options][1]"/><br/>2 <input type="text" name="question[1][options][2]"/><br/>3 <input type="text" name="question[1][options][3]"/></td>
+            <td>Dish 1 <input type="text" name="question[1][options][1][dish][1]"/><br/>Dish 2 <input type="text" name="question[1][options][2][dish][2]"/><br/>Dish 3 <input type="text" name="question[1][options][3][dish][3]"/></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><textarea type="text" rows="3" name="question[2][name]"/></td>
+            <td>1 <input type="text" name="question[2][options][1]"/><br/>2 <input type="text" name="question[2][options][2]"/><br/>3 <input type="text" name="question[2][options][3]"/></td>            
+            <td>Dish 1 <input type="text" name="question[2][options][1][dish][1]"/><br/>Dish 2 <input type="text" name="question[2][options][2][dish][2]"/><br/>Dish 3 <input type="text" name="question[2][options][3][dish][3]"/></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><textarea type="text" rows="3" name="question[3][name]"/></td>
+            <td>1 <input type="text" name="question[3][options][1]"/><br/>2 <input type="text" name="question[3][options][2]"/><br/>3 <input type="text" name="question[3][options][3]"/></td>            
+            <td>Dish 1 <input type="text" name="question[3][options][1][dish][1]"/><br/>Dish 2 <input type="text" name="question[3][options][2][dish][2]"/><br/>Dish 3 <input type="text" name="question[3][options][3][dish][3]"/></td>
+          </tr>
+        </tbody>
+      </Table>
       </form>
+        
+        {/* <form onSubmit={this.handleSubmit}>
+          Question 1: <input type="text" name="question[1][name]"/>
+          Option 1: <input type="text" name="question[1][options][1]"/>
+          Dish 1:<input type="text" name="question[1][options][1][dish][1]"/>
+          Option 2: <input type="text" name="question[1][options][2]"/>
+          Dish 2:<input type="text" name="question[1][options][2][dish][2]"/>
+          Option 3: <input type="text" name="question[1][options][3]"/>
+          Dish 3:<input type="text" name="question[1][options][3][dish][3]"/>
+      
+          Question 2: <input type="text" name="question[2][name]"/>
+          Option 1: <input type="text" name="question[2][options][1]"/>
+          Dish 1:<input type="text" name="question[2][options][1][dish][1]"/>
+          Option 2:<input type="text" name="question[2][options][2]"/>
+          Dish 2:<input type="text" name="question[2][options][2][dish][2]"/>
+          Option 3:<input type="text" name="question[2][options][3]"/>
+          Dish 3:<input type="text" name="question[2][options][3][dish][3]"/>
+
+          Question 3: <input type="text" name="question[3][name]"/>
+          Option 1: <input type="text" name="question[3][options][1]"/>
+          Dish 1:<input type="text" name="question[3][options][1][dish][1]"/>
+          Option 2: <input type="text" name="question[3][options][2]"/>
+          Dish 2:<input type="text" name="question[3][options][2][dish][2]"/>
+          Option 3: <input type="text" name="question[3][options][3]"/>
+          Dish 3:<input type="text" name="question[3][options][3][dish][3]"/>
+          <button type="submit"> Submit </button>
+        </form> */}
         {/* quiz map questions */}
         {/* {
           this.props.quiz.questions.map(q => 

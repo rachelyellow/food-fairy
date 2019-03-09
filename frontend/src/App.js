@@ -44,8 +44,6 @@ class App extends Component {
              : 
              <QuizForm quiz={this.state.quiz}  />
          }
-        
-            
 
         {/* <button onClick={this.toggleEditing}>
           { this.state.editingQuiz ? 'Cancel' : 'Edit' }

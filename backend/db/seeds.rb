@@ -56,22 +56,22 @@ option7 = Option.create(question_id: 3, name:"Mild")
 # Dishes 
 
 # Raw Fish(light and heavy)
-dish1 = Dish.create(name:"Ruby Sashimi [12pc]", image:"https://scontent-lax3-1.cdninstagram.com/vp/a0d1f0f0250388ce58c075c9db8eedd5/5CD57D20/t51.2885-15/e35/c41.0.998.998/s480x480/46797746_2460616444012583_2590863162451918337_n.jpg?_nc_ht=scontent-lax3-1.cdninstagram.com" )
-dish2 = Dish.create(name:"Ruby Sashimi [6pc]", image:"https://scontent-lax3-1.cdninstagram.com/vp/a0d1f0f0250388ce58c075c9db8eedd5/5CD57D20/t51.2885-15/e35/c41.0.998.998/s480x480/46797746_2460616444012583_2590863162451918337_n.jpg?_nc_ht=scontent-lax3-1.cdninstagram.com" )
+dish1 = Dish.create(restaurant_id:1, name:"Ruby Sashimi [12pc]", image:"https://scontent-lax3-1.cdninstagram.com/vp/a0d1f0f0250388ce58c075c9db8eedd5/5CD57D20/t51.2885-15/e35/c41.0.998.998/s480x480/46797746_2460616444012583_2590863162451918337_n.jpg?_nc_ht=scontent-lax3-1.cdninstagram.com" )
+dish2 = Dish.create(restaurant_id:1, name:"Ruby Sashimi [6pc]", image:"https://scontent-lax3-1.cdninstagram.com/vp/a0d1f0f0250388ce58c075c9db8eedd5/5CD57D20/t51.2885-15/e35/c41.0.998.998/s480x480/46797746_2460616444012583_2590863162451918337_n.jpg?_nc_ht=scontent-lax3-1.cdninstagram.com" )
 
 # Not raw Fish
-dish3 = Dish.create(name:"Tempura Shrimp [6pc]", image:"https://www.justonecookbook.com/wp-content/uploads/2016/04/Dragon-Roll-New.jpg" )
-dish4 = Dish.create(name:"Tempura Shrimp [12pc]", image:"https://www.justonecookbook.com/wp-content/uploads/2016/04/Dragon-Roll-New.jpg" )
+dish3 = Dish.create(restaurant_id:1, name:"Tempura Shrimp [6pc]", image:"https://www.justonecookbook.com/wp-content/uploads/2016/04/Dragon-Roll-New.jpg" )
+dish4 = Dish.create(restaurant_id:1, name:"Tempura Shrimp [12pc]", image:"https://www.justonecookbook.com/wp-content/uploads/2016/04/Dragon-Roll-New.jpg" )
 
-dish5 = Dish.create(name:"Spicy Tuna Roll [6pc]", image:"https://www.justonecookbook.com/wp-content/uploads/2017/02/Spicy-Tuna-Rolls-III.jpg" )
-dish6 = Dish.create(name:"Spicy Tuna Roll [12pc]", image:"https://www.justonecookbook.com/wp-content/uploads/2017/02/Spicy-Tuna-Rolls-III.jpg" )
+dish5 = Dish.create(restaurant_id:1, name:"Spicy Tuna Roll [6pc]", image:"https://www.justonecookbook.com/wp-content/uploads/2017/02/Spicy-Tuna-Rolls-III.jpg" )
+dish6 = Dish.create(restaurant_id:1, name:"Spicy Tuna Roll [12pc]", image:"https://www.justonecookbook.com/wp-content/uploads/2017/02/Spicy-Tuna-Rolls-III.jpg" )
 
-dish7 = Dish.create(name:"Spider Roll [6pc]", image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpOSiw0DNvOGTz63lYnQkWbWZLfMcEJ9ES5brCp3wcd0nb3ioF" )
-dish8 = Dish.create(name:"Spider Roll [12pc]", image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpOSiw0DNvOGTz63lYnQkWbWZLfMcEJ9ES5brCp3wcd0nb3ioF" )
+dish7 = Dish.create(restaurant_id:1, name:"Spider Roll [6pc]", image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpOSiw0DNvOGTz63lYnQkWbWZLfMcEJ9ES5brCp3wcd0nb3ioF" )
+dish8 = Dish.create(restaurant_id:1, name:"Spider Roll [12pc]", image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpOSiw0DNvOGTz63lYnQkWbWZLfMcEJ9ES5brCp3wcd0nb3ioF" )
 
 
-dish9 = Dish.create(name:"California Roll [6pc]", image:"https://cdn.cpnscdn.com/static.coupons.com/ext/kitchme/images/recipes/600x400/california-roll-sushi_33781.jpg" )
-dish10 = Dish.create(name:"California Roll [12pc]", image:"https://cdn.cpnscdn.com/static.coupons.com/ext/kitchme/images/recipes/600x400/california-roll-sushi_33781.jpg" )
+dish9 = Dish.create(restaurant_id:1, name:"California Roll [6pc]", image:"https://cdn.cpnscdn.com/static.coupons.com/ext/kitchme/images/recipes/600x400/california-roll-sushi_33781.jpg" )
+dish10 = Dish.create(restaurant_id:1, name:"California Roll [12pc]", image:"https://cdn.cpnscdn.com/static.coupons.com/ext/kitchme/images/recipes/600x400/california-roll-sushi_33781.jpg" )
 
 
 #Associating dishes with options 

@@ -11,8 +11,12 @@
 cus1 = Customer.create!(first_name: "Anisa", last_name: "Tahlil", email: "anisa@hotmail.com", password_digest: "12345")
 
 # Creating Restaurants
-res1 = Restaurant.create(name: "Rachel's Sushi Palace", reward: "$5.00 off first order", email: "rachel@gmail.com", password_digest: "hello",latitude: 43.644367,longitude:  -79.424721, description:"Japanese Restaurant", image:"https://img.jakpost.net/c/2017/02/28/2017_02_28_22453_1488267265._large.jpg");
-res2 = Restaurant.create(name:"Gagan's Res", reward: "$2.00 off first order", email:"gagan@gmail.com", password_digest:"hithere",latitude: 43.645581, longitude: -79.400644, description:"Italian Restaurant" ,image:"https://amp.businessinsider.com/images/56182ad29dd7cc1b008c0dae-750-526.jpg" );
+res1 = Restaurant.create(name: "Rachel's Sushi Palace", reward: "$5.00 off first order", email: "rachel@gmail.com", password_digest: "hello",latitude: 43.644367,longitude:  -79.424721, description:"Japanese Restaurant", image:"https://img.jakpost.net/c/2017/02/28/2017_02_28_22453_1488267265._large.jpg", address:"559 King Street West, Toronto, ON");
+res2 = Restaurant.create(name:"Marty's deepdished Cuisine", reward: "$2.00 off first order", email:"gagan@gmail.com", password_digest:"hithere",latitude: 43.645581, longitude: -79.400644, description:"Italian Restaurant" ,image:"https://amp.businessinsider.com/images/56182ad29dd7cc1b008c0dae-750-526.jpg", address:"80 Portland Street, Toronto,ON" );
+res3 = Restaurant.create(name:"The Foodie's Bargain", reward:"50% off first order", email:"foodie@gmail.com",password_digest:"hello",latitude: 43.645630, longitude: -79.399195, description:"Great food for a bargain", image:"https://i.imgur.com/n3BQO3o.png", address:"662 King Street West, Toronto,ON")
+res4 = Restaurant.create(name:"SweetNSour", reward:"$5.00 off first order", email:"sweetnsalty@gmail.com",password_digest:"hello",latitude: 43.643900, longitude: -79.397554, description:"Heaven for sweet-tooths", image:"https://i.imgur.com/gKcgyR0.jpg", address:"730 King Street West, Toronto,ON")
+res5 = Restaurant.create(name:"Punjab Pioneers Buffet", reward:"$10.00 off first order", email:"ppb@gmail.com",password_digest:"hello",latitude: 43.646220, longitude: -79.394614, description:"Indian food buffet", image:"https://i.imgur.com/diS0Bnu.png", address:"721 King Street West, Toronto,ON")
+
 
 quiz1 = Quiz.create(restaurant_id:1);
 

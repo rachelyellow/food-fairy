@@ -10,4 +10,12 @@ class DishController < ApplicationController
                     :restaurant => @restaurant
     }
   end
+
+
+  def create
+  end
+
+
+  def index 
+  end 
 end

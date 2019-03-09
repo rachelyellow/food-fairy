@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import NavBar from './NavBar.js';
 import axios from 'axios'; 
 import Statusbar from "./Statusbar.js";
+import Table from 'react-bootstrap/Table'; 
 
 class Rewards extends Component {
   constructor(){
@@ -29,6 +30,7 @@ class Rewards extends Component {
       console.log(error);
     })
   }
+
   render() {
     if (!this.state.results) {
       return (<div>Loading....</div>)
@@ -37,15 +39,28 @@ class Rewards extends Component {
         <div>
           <Statusbar/>
           <NavBar/>
-          {this.state.results.map((result) => (
-            <div>
-              <span>Restaurant: {result.restaurant.name}</span>
-              <span>Reward: {result.restaurant.reward} </span>
-              <span>Reccomended dish: {result.dish[0].name}</span>
-              <img src={result.dish[0].image}/>
+          <div>
+              <Table striped bordered hover size="sm">
+                <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Restaurant</th>
+                      <th>Reward</th>
+                      <th>Dish</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {this.state.results.map((result, idx) => (
+                      <tr>
+                        <td>{idx}</td>
+                        <td>{result.restaurant.name}</td>
+                        <td>{result.restaurant.reward}</td>
+                        <td>{result.dish[0].name} <img alt='food' src={result.dish[0].image}/></td>
+                      </tr>
+                    ))}
+                </tbody>
+              </Table>
             </div>
-
-          ))}
           </div>
       );
     }

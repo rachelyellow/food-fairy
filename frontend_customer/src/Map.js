@@ -108,6 +108,7 @@ export class MapContainer extends Component {
                 name= {restaurant.name} 
                 id = {restaurant.id}
                 image = {restaurant.image}
+                streetAddress = {restaurant.address}
                 description = {restaurant.description}
                 position = {
                   {
@@ -123,6 +124,7 @@ export class MapContainer extends Component {
               <div>
                 <div>
                   <h4>{this.state.selectedPlace.name}</h4>
+                  <h5>{this.state.selectedPlace.streetAddress}</h5>
                   <p>{this.state.selectedPlace.description}</p>
                   <h3>{this.state.formatted_address}</h3>
                   <img style={imageStyle} src={this.state.selectedPlace.image}/>

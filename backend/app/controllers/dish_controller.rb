@@ -13,9 +13,18 @@ class DishController < ApplicationController
 
 
   def create
+    byebug
   end
 
 
   def index 
+    # restaurant = Restaurant.find params[:restaurant_id]
+    # dishes = Dish.where(restaurant_id: params[:restaurant_id])
+    # dishesInfo = [];
+    # dishes.each |dish| do 
+    #   dishesInfo = 
+    # end
+    # render :json => {:dish}
+    
   end 
 end

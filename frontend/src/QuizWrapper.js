@@ -14,8 +14,6 @@ class QuizWrapper extends Component {
     };
   }
 
-
-
   componentDidMount() {
     axios.get('http://localhost:3000/restaurants/2/quizzes')
     .then(res => {

@@ -17,6 +17,6 @@ Rails.application.routes.draw do
     resources :quizzes, only: [:show, :create, :update, :index]
     resources :dishes, only: [:create, :index]
   end
-
+  
 end
 

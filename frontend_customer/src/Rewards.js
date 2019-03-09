@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import NavBar from './NavBar.js';
 import axios from 'axios'; 
 import Statusbar from "./Statusbar.js";
-import Table from 'react-bootstrap/Table'; 
+// import Table from 'react-bootstrap/Table'; 
 
 class Rewards extends Component {
   constructor(){
@@ -39,13 +39,13 @@ class Rewards extends Component {
           <NavBar/>
           <div>
             <h1>Your Rewards</h1>
-              <Table striped bordered hover size="sm">
+              <table style={{width:'80%', border:'1px solid black'}} >
                 <thead>
                     <tr>
                       <th>#</th>
                       <th>Restaurant</th>
                       <th>Reward</th>
-                      <th>Dish</th>
+                      <th>Recommended Dish</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -58,7 +58,7 @@ class Rewards extends Component {
                       </tr>
                     ))}
                 </tbody>
-              </Table>
+              </table>
 
             </div>
           </div>

@@ -19,8 +19,6 @@ class Rewards extends Component {
       }
     })
     .then(res => {
-
-      console.log(res.data.results)
         this.setState({
          results: res.data.results
         })
@@ -60,6 +58,7 @@ class Rewards extends Component {
                     ))}
                 </tbody>
               </Table>
+
             </div>
           </div>
       );

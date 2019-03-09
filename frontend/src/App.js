@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios'; 
+import NavBar from './navbar.js';
 import Quiz from './quiz.js'
 import QuizForm from './quizform.js'
 
@@ -36,14 +37,13 @@ class App extends Component {
   render() {
     return (
       <div>
+        <NavBar fixed="top" />
          { (this.state.quiz.length > 0)
              ? 
             <Quiz quiz={this.state.quiz} />
              : 
              <QuizForm quiz={this.state.quiz}  />
          }
-        
-            
 
         {/* <button onClick={this.toggleEditing}>
           { this.state.editingQuiz ? 'Cancel' : 'Edit' }

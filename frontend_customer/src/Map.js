@@ -3,7 +3,7 @@ import { Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react';
 import axios from 'axios'
 import NavBar from './NavBar.js';
 import Statusbar from "./Statusbar.js";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
 const mapStyles = {
   width: '80%',
@@ -47,7 +47,6 @@ export class MapContainer extends Component {
       axios.get('/quizzes')
       .then(response => {
         response.data.quizzes.map((quiz) => this.setState({availableQuizzes: this.state.availableQuizzes.concat(quiz.restaurant_id) }))
-        // this.setState({ availableQuizzes: response.data.quizzes }, () => console.log(this.state.availableQuizzes))
       })
     }
 
@@ -59,7 +58,6 @@ export class MapContainer extends Component {
     });
 
     onClose = props => {
-      console.log('aq ',this.state.availableQuizzes, 'activemarkerID: ', this.state.activeMarker.id)
       if (this.state.showingInfoWindow) {
         this.setState({
           showingInfoWindow: false,
@@ -72,9 +70,9 @@ export class MapContainer extends Component {
       this.state.quizResults.map((result) => {
         if (result.customer_id === this.state.activeUser) {
           //STILL ASSUMING QUIZ ID === RESTO ID
-          this.setState({ completedQuizzes: this.state.completedQuizzes.concat(result.restaurant.id) }, () => {
-          })
+          this.setState({ completedQuizzes: this.state.completedQuizzes.concat(result.restaurant.id) })
         }
+      return true
       })
     }
   
@@ -94,12 +92,6 @@ export class MapContainer extends Component {
             }}
           >
           { this.state.restaurants.map((restaurant) => {
-
-            fetch('https://maps.googleapis.com/maps/api/geocode/json?address=' + restaurant.latitude + ',' + restaurant.longitude + '&key=' + "AIzaSyDF0n1daTVqgT7582-gLCO-GOsUgsF2-LQ")
-            .then((response) => response.json())
-            .then((responseJson) => {
-                console.log('ADDRESS GEOCODE is BACK!! => ' + JSON.stringify(responseJson.results[0].formatted_address));
-            })
 
             return (
               <Marker
@@ -127,19 +119,19 @@ export class MapContainer extends Component {
                   <h5>{this.state.selectedPlace.streetAddress}</h5>
                   <p>{this.state.selectedPlace.description}</p>
                   <h3>{this.state.formatted_address}</h3>
-                  <img style={imageStyle} src={this.state.selectedPlace.image}/>
+                  <img style={imageStyle} alt="" src={this.state.selectedPlace.image}/>
                 </div>
-                {!this.state.availableQuizzes.includes(this.state.activeMarker.id) && 
+                {this.state.activeMarker && !this.state.availableQuizzes.includes(this.state.activeMarker.id) && 
                 <div>
                   <p>There is currently no quiz for this restaurant. Please check back at a later time.</p>
                 </div>
                 }
-                {!this.state.completedQuizzes.includes(this.state.activeMarker.id) && this.state.availableQuizzes.includes(this.state.activeMarker.id) &&
+                {this.state.activeMarker && !this.state.completedQuizzes.includes(this.state.activeMarker.id) && this.state.availableQuizzes.includes(this.state.activeMarker.id) &&
                     <Router>
                       <Link to={to}>Quiz</Link>
                     </Router>
                 }
-                {this.state.completedQuizzes.includes(this.state.activeMarker.id) && 
+                {this.state.activeMarker && this.state.completedQuizzes.includes(this.state.activeMarker.id) && 
                 <div>
                   <p>You've already completed this quiz! Please check
                     <Router>
@@ -160,9 +152,3 @@ export class MapContainer extends Component {
 export default GoogleApiWrapper({
   apiKey: 'AIzaSyDF0n1daTVqgT7582-gLCO-GOsUgsF2-LQ'
 })(MapContainer);
-
-// {!this.props.answeredRestaurants.includes(this.props.marker.id) &&
-//   <Router>
-//     <Link to={to}>Quiz</Link>
-//   </Router>
-//   }

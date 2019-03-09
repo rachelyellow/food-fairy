@@ -10,19 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190308230326) do
+ActiveRecord::Schema.define(version: 20190309183753) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "answers", force: :cascade do |t|
-    t.bigint "option_id"
-    t.bigint "customer_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["customer_id"], name: "index_answers_on_customer_id"
-    t.index ["option_id"], name: "index_answers_on_option_id"
-  end
 
   create_table "customers", force: :cascade do |t|
     t.string "first_name"
@@ -45,6 +36,8 @@ ActiveRecord::Schema.define(version: 20190308230326) do
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "restaurant_id"
+    t.index ["restaurant_id"], name: "index_dishes_on_restaurant_id"
   end
 
   create_table "dishes_options", id: false, force: :cascade do |t|
@@ -103,8 +96,7 @@ ActiveRecord::Schema.define(version: 20190308230326) do
     t.index ["quiz_id"], name: "index_results_on_quiz_id"
   end
 
-  add_foreign_key "answers", "customers"
-  add_foreign_key "answers", "options"
+  add_foreign_key "dishes", "restaurants"
   add_foreign_key "options", "questions"
   add_foreign_key "questions", "quizzes"
   add_foreign_key "quizzes", "restaurants"

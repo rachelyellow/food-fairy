@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+
 export class NavBar extends Component {
     render(){
         return (
@@ -14,12 +15,10 @@ export class NavBar extends Component {
                 </li>
               </ul>
               <hr />
-              </div>
+            </div>
 
         );
-    }
-
-    
+    }    
 }
 
 export default NavBar

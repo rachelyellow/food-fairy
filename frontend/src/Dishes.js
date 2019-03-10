@@ -65,7 +65,7 @@ class Dishes extends Component {
               </tr>
             </tbody>
           </Table>
-          <button type="submit" style={{borderRadius:'5px', padding:'5px 8px'}} > Submit </button>
+          <button type="submit" style={{borderRadius:'25px', padding:'15px 18px'}} > Submit </button>
         </form>
       </div>
     );

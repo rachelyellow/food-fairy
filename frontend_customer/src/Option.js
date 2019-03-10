@@ -4,6 +4,7 @@ import ListGroupItem from 'react-bootstrap/ListGroup'
 
 
 class Option extends Component {
+  
    saveAndNext = () => {
     const option = this.props.option;
     this.props.logAnswer(option)

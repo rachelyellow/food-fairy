@@ -104,8 +104,6 @@ class Quiz extends Component {
           {this.state.quizData.questions.map((item, idx) => {
             const display = this.state.activeQuestion === idx;
             return <Question 
-            totalQuestions={this.state.quizData.questions.length}
-            currentQuestion={this.state.activeQuestion + 1}
             question={item} 
             key={idx} 
             display={display} 
@@ -114,7 +112,10 @@ class Quiz extends Component {
           })}
             {this.state.endOfQuiz && <Redirect to={to}/>}
         </Card>
-        <Breadcrumbs  currentQuestion={this.state.activeQuestion + 1} totalQuestions={this.state.quizData.questions.length} />
+        <Breadcrumbs
+        currentQuestion={this.state.activeQuestion + 1}
+        totalQuestions={this.state.quizData.questions.length}
+        style={{ marginLeft:'690px', marginTop:'40px' }} />
       </div>
     );
   }

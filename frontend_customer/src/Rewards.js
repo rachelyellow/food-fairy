@@ -25,7 +25,6 @@ class Rewards extends Component {
         })
     })
     .catch(function (error) {
-      // handle error
       console.log(error);
     })
   }

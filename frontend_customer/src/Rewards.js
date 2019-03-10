@@ -37,7 +37,6 @@ class Rewards extends Component {
     } else {
       return(
         <div style={{height:'100vh', backgroundImage:"url("+background+")", backgroundSize: 'cover' }}>
-          <Statusbar/>
           <NavBar/>
           <div style={{marginLeft:'13em'}} >
             <h2 style={{color:'white'}} >My Rewards</h2>

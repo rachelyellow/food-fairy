@@ -77,7 +77,7 @@ export class MapContainer extends Component {
     }
   
     render() {
-        let to = `/restauant/${this.state.selectedPlace.id}/quiz/${this.state.selectedPlace.id}`
+        let to = `/restaurant/${this.state.selectedPlace.id}/quiz/${this.state.selectedPlace.id}`
         return (
           <div>
           <Statusbar/>

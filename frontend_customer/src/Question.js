@@ -10,7 +10,9 @@ class Question extends Component {
     if (this.props.display) {
       return (
         <div>
-          <Card.Header>{this.props.question.inquiry}</Card.Header>
+          <Card.Header>
+            <h5>{this.props.question.inquiry}</h5>
+          </Card.Header>
           <OptionsList 
           options={this.props.question.options} 
           nextQuestion={this.props.nextQuestion}

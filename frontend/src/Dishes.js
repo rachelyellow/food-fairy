@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import Table from 'react-bootstrap/Table'
 import axios from 'axios'; 
+import { Redirect } from 'react-router'
 
 class Dishes extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      question: null
+      question: null,
+      submit: false
     }
   }
 
@@ -25,6 +27,8 @@ class Dishes extends Component {
     axios.post('http://localhost:3000/restaurants/2/dishes',
       data
      )
+
+     this.setState({submit: true})
   }
   
 
@@ -70,6 +74,7 @@ class Dishes extends Component {
           </tbody>
         </Table>
         <button type="submit"> Submit </button>
+        {this.state.submit && <Redirect to='/restaurants/quizzes'/>}
       </form>
       </div>
 

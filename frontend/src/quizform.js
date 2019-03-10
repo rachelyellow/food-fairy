@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Table from 'react-bootstrap/Table'
-
+import { Redirect } from 'react-router'
 import axios from 'axios'; 
 
 class Quizform extends Component {
@@ -8,7 +8,8 @@ class Quizform extends Component {
     super(props);
     this.state = {
       question: null,
-      dishes :[]
+      dishes :[],
+      submit: false
      
     }
     this.toggleHidden = this.toggleHidden.bind(this)
@@ -47,28 +48,13 @@ class Quizform extends Component {
     axios.post('http://localhost:3000/restaurants/2/quizzes',
       data
      )
+
+     this.setState({submit: true})
   }
 
   render() {
     return(
       <div>
-
-
-        {/* <form onSubmit={this.handleSubmit} >
-          <select name="option">
-              <option value="1">Option1</option>
-              <option value= "2">Option2</option>
-              <option value="3">Option3</option>
-          </select>
-          <button type="submit">Submit</button>
-        </form> */}
-
-
-
-      
-
-
-
       <form  onSubmit={this.handleSubmit} name="option">
       <Table striped bordered hover>
         <thead>
@@ -177,9 +163,7 @@ class Quizform extends Component {
                       
                   ))}
             </select>
-              
               <br/>
-              
               Dish 3 
               <select name="dishid">
               {this.state.dishes.map((dish, idx) => (
@@ -188,47 +172,14 @@ class Quizform extends Component {
                   
               ))}
             </select>
-
             <br/>
               </td>
           </tr>
         </tbody>
       </Table>
       <button type="submit"> Submit </button>
+      {this.state.submit && <Redirect to='/restaurants/quizzes'/>}
       </form>
-        
-        {/* <form onSubmit={this.handleSubmit}>
-          Question 1: <input type="text" name="question[1][name]"/>
-          Option 1: <input type="text" name="question[1][options][1]"/>
-          Dish 1:<input type="text" name="question[1][options][1][dish][1]"/>
-          Option 2: <input type="text" name="question[1][options][2]"/>
-          Dish 2:<input type="text" name="question[1][options][2][dish][2]"/>
-          Option 3: <input type="text" name="question[1][options][3]"/>
-          Dish 3:<input type="text" name="question[1][options][3][dish][3]"/>
-      
-          Question 2: <input type="text" name="question[2][name]"/>
-          Option 1: <input type="text" name="question[2][options][1]"/>
-          Dish 1:<input type="text" name="question[2][options][1][dish][1]"/>
-          Option 2:<input type="text" name="question[2][options][2]"/>
-          Dish 2:<input type="text" name="question[2][options][2][dish][2]"/>
-          Option 3:<input type="text" name="question[2][options][3]"/>
-          Dish 3:<input type="text" name="question[2][options][3][dish][3]"/>
-
-          Question 3: <input type="text" name="question[3][name]"/>
-          Option 1: <input type="text" name="question[3][options][1]"/>
-          Dish 1:<input type="text" name="question[3][options][1][dish][1]"/>
-          Option 2: <input type="text" name="question[3][options][2]"/>
-          Dish 2:<input type="text" name="question[3][options][2][dish][2]"/>
-          Option 3: <input type="text" name="question[3][options][3]"/>
-          Dish 3:<input type="text" name="question[3][options][3][dish][3]"/>
-          <button type="submit"> Submit </button>
-        </form> */}
-        {/* quiz map questions */}
-        {/* {
-          this.props.quiz.questions.map(q => 
-            <input value={q.inquiry} onChange={this.updateQuestion}/>
-          )
-        } */}
       </div>
     )
   } 

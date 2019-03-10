@@ -37,6 +37,29 @@ class Rewards extends Component {
         <div style={{height:'100vh', backgroundImage:"url("+background+")", backgroundSize: 'cover' }}>
           <Statusbar/>
           <NavBar/>
+          <div style={{height:'100vh', width:'80vw', backgroundColor:'white', display: 'flex', justifyContent: 'center', marginLeft:'8.75em'}}>
+            <h1>MyRewards</h1>
+              <table style={{width:'80%', border:'1px solid black'}} >
+                <thead style={{height:'1em'}}>
+                    <tr>
+                      <th>#</th>
+                      <th>Restaurant</th>
+                      <th>Reward</th>
+                      <th>Recommended Dish</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {this.state.results.map((result, idx) => (
+                      <tr>
+                        <td>{idx + 1}</td>
+                        <td>{result.restaurant.name}</td>
+                        <td>{result.restaurant.reward}</td>
+                        <td><img alt='food' src={result.dish[0].image} width="200" height="150" /><br/> {result.dish[0].name}</td>
+                      </tr>
+                    ))}
+                </tbody>
+              </table>
+            </div>
         </div>
       );
     }
@@ -45,27 +68,3 @@ class Rewards extends Component {
 
 export default Rewards
 
-{/* 
-<div style={{height:'100vh', width:'80vw', backgroundColor:'white', display: 'flex', justifyContent: 'center'}}>
-  <h1>MyRewards</h1>
-    <table style={{width:'80%', border:'1px solid black'}} >
-      <thead style={{height:'1em'}}>
-          <tr>
-            <th>#</th>
-            <th>Restaurant</th>
-            <th>Reward</th>
-            <th>Recommended Dish</th>
-          </tr>
-        </thead>
-        <tbody>
-          {this.state.results.map((result, idx) => (
-            <tr>
-              <td>{idx + 1}</td>
-              <td>{result.restaurant.name}</td>
-              <td>{result.restaurant.reward}</td>
-              <td><img alt='food' src={result.dish[0].image} width="200" height="150" /><br/> {result.dish[0].name}</td>
-            </tr>
-          ))}
-      </tbody>
-    </table>
-  </div> */}

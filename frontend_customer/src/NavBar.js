@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+
 export class NavBar extends Component {
     render(){
         return (
@@ -12,11 +13,9 @@ export class NavBar extends Component {
                 <Link to="/rewards">Rewards</Link>
               </button>
               <hr />
-              </div>
+            </div>
         );
-    }
-
-    
+    }    
 }
 
 export default NavBar

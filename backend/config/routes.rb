@@ -15,7 +15,8 @@ Rails.application.routes.draw do
   
   resources :restaurants do
     resources :quizzes, only: [:show, :create, :update, :index]
+    resources :dishes, only: [:create, :index]
   end
-
+  
 end
 

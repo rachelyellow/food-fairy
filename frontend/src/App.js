@@ -1,53 +1,26 @@
 import React, { Component } from 'react';
 import './App.css';
-import axios from 'axios'; 
+import { BrowserRouter as Router, Route } from "react-router-dom"
 import NavBar from './navbar.js';
-import Quiz from './quiz.js'
-import QuizForm from './quizform.js'
+import { Switch } from 'react-router'
+import Dishes from './Dishes.js'
+import QuizWrapper from './QuizWrapper.js'
+
+
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      quiz: [],
-      editingQuiz: false
-    };
-  }
-
-  componentDidMount() {
-    axios.get('http://localhost:3000/restaurants/2/quizzes')
-    .then(res => {
-        this.setState({
-          quiz: res.data.quizzes
-        })
-    
-    })
-    .catch(function (error) {
-      // handle error
-      console.log(error);
-    })
-  }
-
-  // toggleEditing = () => {
-  //   this.setState({
-  //     editingQuiz: !this.state.editingQuiz
-  //   })
-  // }
 
   render() {
     return (
       <div>
-        <NavBar fixed="top" />
-         { (this.state.quiz.length > 0)
-             ? 
-            <Quiz quiz={this.state.quiz} />
-             : 
-             <QuizForm quiz={this.state.quiz}  />
-         }
+          <NavBar fixed="top" />
+        <Router>
+            <Switch>
+              <Route path="/restaurants/dishes" component={Dishes} />  
+              <Route path="/restaurants/quizzes" component={QuizWrapper} />  
+            </Switch>
+        </Router>
 
-        {/* <button onClick={this.toggleEditing}>
-          { this.state.editingQuiz ? 'Cancel' : 'Edit' }
-        </button> */}
       </div>
     );
   }

@@ -33,15 +33,15 @@ class Result extends Component {
             <div>
                 <NavBar/>
 
-                <Card id="card" bg="white" text="black">
-                    <Card.Header id="mainheader">Based on your preferences, we reccomend this dish for you from <h4>{this.state.restaurant}</h4> </Card.Header>
-                    <Card.Body>
-                    <Card.Title id="dishname" >{this.state.dishName}</Card.Title>
-                    <Card.Text>
+                <div id="card">
+                    <div id="mainheader">Based on your preferences, we reccomend this dish for you from <h4>{this.state.restaurant}</h4> </div>
+                    <div>
+                    <div id="dishname" >{this.state.dishName}</div>
+                    <div>
                  <img id="image" src={this.state.dishImage}/>
-                    </Card.Text>
-                    </Card.Body>
-                </Card>
+                    </div>
+                    </div>
+                </div>
             </div>
         );
     }

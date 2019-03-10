@@ -53,7 +53,7 @@ class Rewards extends Component {
                         <td>{idx}</td>
                         <td>{result.restaurant.name}</td>
                         <td>{result.restaurant.reward}</td>
-                        <td>{result.dish[0].name} <img alt='food' src={result.dish[0].image}/></td>
+                        <td>{result.dish[0].name} <img src={result.dish[0].image}/></td>
                       </tr>
                     ))}
                 </tbody>

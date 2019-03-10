@@ -5,6 +5,9 @@ import Statusbar from './Statusbar.js'
 import axios from 'axios'; 
 import Card from 'react-bootstrap/Card'
 import {Redirect } from 'react-router'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 
 class Quiz extends Component {
@@ -98,24 +101,33 @@ class Quiz extends Component {
   render() {
     let to = `/results/${this.state.resultID}`
     return (
-      <div>      
+      <div>
         <Statusbar/>
-        <Card style={{ width:'18rem', margin:'0 auto' }}>
-          {this.state.quizData.questions.map((item, idx) => {
-            const display = this.state.activeQuestion === idx;
-            return <Question 
-            question={item} 
-            key={idx} 
-            display={display} 
-            nextQuestion={this.nextQuestion} 
-            logAnswer={this.logAnswer} />
-          })}
-            {this.state.endOfQuiz && <Redirect to={to}/>}
-        </Card>
-        <Breadcrumbs
-        currentQuestion={this.state.activeQuestion + 1}
-        totalQuestions={this.state.quizData.questions.length}
-        style={{ marginLeft:'690px', marginTop:'40px' }} />
+        <Container>
+          <Row>
+            <Col sm={4} style={{paddingLeft:'34em'}} >
+              <Breadcrumbs
+              currentQuestion={this.state.activeQuestion + 1}
+              totalQuestions={this.state.quizData.questions.length} />
+            </Col>
+          </Row>
+          <Row>
+            <Col sm={8} style={{paddingLeft:'23em'}} >
+              <Card style={{ width:'25rem', margin:'5em auto' }}>
+                {this.state.quizData.questions.map((item, idx) => {
+                  const display = this.state.activeQuestion === idx;
+                  return <Question
+                  question={item} 
+                  key={idx} 
+                  display={display} 
+                  nextQuestion={this.nextQuestion} 
+                  logAnswer={this.logAnswer} />
+                })}
+                  {this.state.endOfQuiz && <Redirect to={to}/>}
+              </Card>
+            </Col>
+          </Row>
+        </Container>
       </div>
     );
   }

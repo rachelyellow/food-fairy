@@ -10,11 +10,8 @@ class Dishes extends Component {
     }
   }
 
-
   handleSubmit = (event) => {
     event.preventDefault()
-    //console.log(event.target.elements.question.value)
-
     const data = {}
 
     for (let entry of new FormData(event.target).entries()) {
@@ -27,52 +24,50 @@ class Dishes extends Component {
      )
   }
   
-
-
   render() {
     return (
       <div>
-      <form onSubmit={this.handleSubmit}>
-        <Table striped bordered hover >
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Dish</th>
-              <th>Image Link</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td><input type="text" name="dish[1]"/></td>
-              <td><input type="text" name="dish[1][img][1]"/></td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td><input type="text" name="dish[2]"/></td>
-              <td><input type="text" name="dish[2][img][2]"/></td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td><input type="text" name="dish[3]"/></td>
-              <td><input type="text" name="dish[3][img][3]"/></td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td><input type="text" name="dish[4]"/></td>
-              <td><input type="text" name="dish[4][img][4]"/></td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td><input type="text" name="dish[5]"/></td>
-              <td><input type="text" name="dish[5][img][5]"/></td>
-            </tr>
-          </tbody>
-        </Table>
-        <button type="submit"> Submit </button>
-      </form>
+        <h2 style={{color:'black'}} >My Featured Dishes</h2>
+        <form onSubmit={this.handleSubmit}>
+          <Table striped bordered hover >
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Dish</th>
+                <th>Image Link</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td><input type="text" name="dish[1]" style={{width:'300px'}} /></td>
+                <td><input type="text" name="dish[1][img][1]" style={{width:'300px'}} /></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td><input type="text" name="dish[2]" style={{width:'300px'}} /></td>
+                <td><input type="text" name="dish[2][img][2]" style={{width:'300px'}} /></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td><input type="text" name="dish[3]" style={{width:'300px'}} /></td>
+                <td><input type="text" name="dish[3][img][3]" style={{width:'300px'}} /></td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td><input type="text" name="dish[4]" style={{width:'300px'}} /></td>
+                <td><input type="text" name="dish[4][img][4]" style={{width:'300px'}} /></td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td><input type="text" name="dish[5]" style={{width:'300px'}} /></td>
+                <td><input type="text" name="dish[5][img][5]" style={{width:'300px'}} /></td>
+              </tr>
+            </tbody>
+          </Table>
+          <button type="submit" style={{borderRadius:'5px', padding:'5px 8px'}} > Submit </button>
+        </form>
       </div>
-
     );
   }
 }

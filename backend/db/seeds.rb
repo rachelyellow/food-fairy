@@ -26,24 +26,24 @@ question1 = Question.create(quiz_id:1, inquiry:"What type of portions do you pre
 # 2
 question2 = Question.create( quiz_id:1, inquiry:"Do you eat raw fish?")
 # 3
-question3 = Question.create(quiz_id:1, inquiry:"What spice level do you prefer?")
+question3 = Question.create(quiz_id:1, inquiry:"When I add hot sauce, I prefer to add it like this:")
 # # 4
 # question4 = Question.create(quiz_id:1, inquiry:"Which of the following do you prefer?")
 
 
 
 #Options for Question 1
-option1 = Option.create(question_id: 1, name:"Light")
-option2 = Option.create(question_id: 1, name:"Heavy")
+option1 = Option.create(question_id: 1, name:"Small")
+option2 = Option.create(question_id: 1, name:"Large")
 
 #Options for Question 2
 option3 = Option.create(question_id: 2, name:"Yes")
 option4 = Option.create(question_id: 2, name:"No")
 
 #Options for Question 3
-option5 = Option.create(question_id: 3, name:"Hot")
-option6 = Option.create(question_id: 3, name:"Medium")
-option7 = Option.create(question_id: 3, name:"Mild")
+option5 = Option.create(question_id: 3, name:"A line")
+option6 = Option.create(question_id: 3, name:"More than 1 dot")
+option7 = Option.create(question_id: 3, name:"A dot")
 
 
 # #Options for Question 4

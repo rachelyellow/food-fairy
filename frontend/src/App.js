@@ -13,7 +13,7 @@ class App extends Component {
   render() {
     return (
       <div>
-          <NavBar fixed="top" />
+        <NavBar fixed="top" />
         <Router>
             <Switch>
               <Route path="/restaurants/dishes" component={Dishes} />  

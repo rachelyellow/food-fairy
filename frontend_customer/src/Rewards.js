@@ -3,6 +3,8 @@ import NavBar from './NavBar.js';
 import axios from 'axios'; 
 import Statusbar from "./Statusbar.js";
 import background from "./images/foodbackground.jpg";
+import Table from 'react-bootstrap/Table'
+
 
 class Rewards extends Component {
   constructor(){
@@ -37,9 +39,9 @@ class Rewards extends Component {
         <div style={{height:'100vh', backgroundImage:"url("+background+")", backgroundSize: 'cover' }}>
           <Statusbar/>
           <NavBar/>
-          <div style={{height:'100vh', width:'80vw', backgroundColor:'white', display: 'flex', justifyContent: 'center', marginLeft:'8.75em'}}>
-            <h1>MyRewards</h1>
-              <table style={{width:'80%', border:'1px solid black'}} >
+          <div style={{marginLeft:'13em'}} >
+            <h2 style={{color:'white'}} >My Rewards</h2>
+              <Table striped bordered hover variant="dark" style={{width:'80%', border:'1px solid black'}} >
                 <thead style={{height:'1em'}}>
                     <tr>
                       <th>#</th>
@@ -58,7 +60,7 @@ class Rewards extends Component {
                       </tr>
                     ))}
                 </tbody>
-              </table>
+              </Table>
             </div>
         </div>
       );

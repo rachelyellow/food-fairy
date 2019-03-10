@@ -24,6 +24,7 @@ class QuizzesController < ApplicationController
 
 
     def create
+        
         quiz = Quiz.create(restaurant_id: params["restaurant_id"] );
         puts "this is the quiz, #{quiz}"
         (1..3).each do |n|
@@ -35,9 +36,10 @@ class QuizzesController < ApplicationController
                puts "this is the option, #{option}"
                option.save
                (1..3).each do |k|
-                dish = option.dishes.new(name: params["question[#{n}][options][#{j}][dish][#{k}]"])
-                puts "this is the dish, #{dish}"
-                dish.save
+                DishOption.new(option_id: option.id, dish_id: params["dishid"] ).save
+                # dish = option.dishes.new(name: params["question[#{n}][options][#{j}][dish][#{k}]"])
+                # puts "this is the dish, #{dish}"
+                # dish.save
                end
             end
         end

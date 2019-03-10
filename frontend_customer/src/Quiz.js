@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Question from "./Question.js";
+import Breadcrumbs from "./Breadcrumbs.js";
 import axios from 'axios'; 
 import Card from 'react-bootstrap/Card'
 import {Redirect } from 'react-router'
@@ -96,21 +97,23 @@ class Quiz extends Component {
   render() {
     let to = `/results/${this.state.resultID}`
     return (
-      <Card style={{ width: '18rem' }}>
-        {this.state.quizData.questions.map((item, idx) => {
-          const display = this.state.activeQuestion === idx;
-          return <Question 
-          totalQuestions={this.state.quizData.questions.length}
-          currentQuestion={this.state.activeQuestion + 1}
-          question={item} 
-          key={idx} 
-          display={display} 
-          nextQuestion={this.nextQuestion} 
-          logAnswer={this.logAnswer} />
-        })}
-          {this.state.endOfQuiz && <Redirect to={to}/>}
-      </Card>
-        
+      <div>      
+        <Card style={{ width: '18rem' }}>
+          {this.state.quizData.questions.map((item, idx) => {
+            const display = this.state.activeQuestion === idx;
+            return <Question 
+            totalQuestions={this.state.quizData.questions.length}
+            currentQuestion={this.state.activeQuestion + 1}
+            question={item} 
+            key={idx} 
+            display={display} 
+            nextQuestion={this.nextQuestion} 
+            logAnswer={this.logAnswer} />
+          })}
+            {this.state.endOfQuiz && <Redirect to={to}/>}
+        </Card>
+        <Breadcrumbs currentQuestion={this.state.activeQuestion + 1} totalQuestions={this.state.quizData.questions.length} />
+      </div>
     );
   }
 }

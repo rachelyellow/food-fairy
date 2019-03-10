@@ -15,7 +15,6 @@ class Question extends Component {
           options={this.props.question.options} 
           nextQuestion={this.props.nextQuestion}
           logAnswer={this.props.logAnswer} />
-          <Breadcrumbs currentQuestion={this.props.currentQuestion} totalQuestions={this.props.totalQuestions} />
         </div>
       );
     }

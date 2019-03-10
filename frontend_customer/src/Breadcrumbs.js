@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
+import Badge from 'react-bootstrap/Badge'
 
 class Breadcrumbs extends Component {
   render() {
     return (
-      <div>
-        {this.props.currentQuestion}/{this.props.totalQuestions}
-      </div>
+        <Badge pill variant="dark">
+          {this.props.currentQuestion}/{this.props.totalQuestions}
+        </Badge>
     );
   }
 }

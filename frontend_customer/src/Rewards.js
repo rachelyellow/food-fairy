@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import NavBar from './NavBar.js';
 import axios from 'axios'; 
-import Statusbar from "./Statusbar.js";
 import background from "./images/foodbackground.jpg";
 import Table from 'react-bootstrap/Table'
 

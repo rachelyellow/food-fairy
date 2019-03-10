@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Question from "./Question.js";
 import Breadcrumbs from "./Breadcrumbs.js";
+import Statusbar from './Statusbar.js'
 import axios from 'axios'; 
 import Card from 'react-bootstrap/Card'
 import {Redirect } from 'react-router'
@@ -98,7 +99,8 @@ class Quiz extends Component {
     let to = `/results/${this.state.resultID}`
     return (
       <div>      
-        <Card style={{ width: '18rem' }}>
+        <Statusbar/>
+        <Card style={{ width:'18rem', margin:'0 auto' }}>
           {this.state.quizData.questions.map((item, idx) => {
             const display = this.state.activeQuestion === idx;
             return <Question 
@@ -112,7 +114,7 @@ class Quiz extends Component {
           })}
             {this.state.endOfQuiz && <Redirect to={to}/>}
         </Card>
-        <Breadcrumbs currentQuestion={this.state.activeQuestion + 1} totalQuestions={this.state.quizData.questions.length} />
+        <Breadcrumbs  currentQuestion={this.state.activeQuestion + 1} totalQuestions={this.state.quizData.questions.length} />
       </div>
     );
   }

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import NavBar from './NavBar.js';
 import axios from 'axios'; 
-import background from "./images/foodbackground.jpg";
+import Statusbar from './Statusbar.js'
 import Table from 'react-bootstrap/Table'
 
 
@@ -35,7 +35,8 @@ class Rewards extends Component {
       return (<div>Loading....</div>)
     } else {
       return(
-        <div style={{height:'100vh', backgroundImage:"url("+background+")", backgroundSize: 'cover' }}>
+        <div>
+          <Statusbar/>
           <NavBar/>
           <div style={{marginLeft:'13em'}} >
             <h2 style={{color:'white'}} >My Rewards</h2>

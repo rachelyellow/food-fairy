@@ -5,14 +5,14 @@ import Result from './Result';
 import CustomerLogin from './CustomerLogin'
 import Rewards from './Rewards.js'
 import Statusbar from './Statusbar.js'
+import background from "./images/foodbackground.jpg";
 import { BrowserRouter as Router, Route } from "react-router-dom"
 import { Switch } from 'react-router'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Statusbar/>
+      <div className="App" style={{height:'100vh', backgroundImage:"url("+background+")", backgroundSize: 'cover' }}>
         <Router>
             <Switch>
               <Route path="/login" component={CustomerLogin} />  

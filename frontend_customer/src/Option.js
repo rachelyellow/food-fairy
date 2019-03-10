@@ -1,4 +1,7 @@
 import React, {Component} from 'react';
+import ListGroup from 'react-bootstrap/ListGroup'
+import ListGroupItem from 'react-bootstrap/ListGroup'
+
 
 class Option extends Component {
    saveAndNext = () => {
@@ -9,9 +12,9 @@ class Option extends Component {
   
   render() {
     return (
-      <li>
-        <button onClick={this.saveAndNext} >{this.props.option.name}</button>
-      </li>
+      <ListGroup.Item onClick={this.saveAndNext}>
+        {this.props.option.name}
+      </ListGroup.Item>
     );
   }
 }

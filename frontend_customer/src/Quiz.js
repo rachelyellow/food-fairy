@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Question from "./Question.js";
 import axios from 'axios'; 
+import Card from 'react-bootstrap/Card'
 import {Redirect } from 'react-router'
 
 
@@ -95,7 +96,7 @@ class Quiz extends Component {
   render() {
     let to = `/results/${this.state.resultID}`
     return (
-      <div>
+      <Card style={{ width: '18rem' }}>
         {this.state.quizData.questions.map((item, idx) => {
           const display = this.state.activeQuestion === idx;
           return <Question 
@@ -108,7 +109,7 @@ class Quiz extends Component {
           logAnswer={this.logAnswer} />
         })}
           {this.state.endOfQuiz && <Redirect to={to}/>}
-      </div>
+      </Card>
         
     );
   }

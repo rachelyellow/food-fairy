@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import Option from "./Option.js";
+import ListGroup from 'react-bootstrap/ListGroup'
 
 class OptionsList extends Component {
   render() {
     return (
-      <ul>
+      <ListGroup variant="flush">
         {this.props.options.map((option, index) => {
           return <Option 
           option={option} 
@@ -12,7 +13,7 @@ class OptionsList extends Component {
           key={option.id}
           logAnswer={this.props.logAnswer} />
         })}
-      </ul>
+      </ListGroup>
     );
   }
 }

@@ -3,19 +3,16 @@ import { Link } from "react-router-dom";
 export class NavBar extends Component {
     render(){
         return (
-        
             <div>
-              <ul>  
-                <li>
+              <button style={{paddingRight:'29px'}}>
                 <Link to="/maps">Maps</Link>
-                </li>
-                <li>
+              </button>
+              <br/>
+              <button>
                 <Link to="/rewards">Rewards</Link>
-                </li>
-              </ul>
+              </button>
               <hr />
               </div>
-
         );
     }
 

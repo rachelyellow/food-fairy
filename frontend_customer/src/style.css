@@ -1,0 +1,25 @@
+#mainheader {
+  margin: auto;
+  text-align: center;
+}
+
+#dishname {
+  margin: auto;
+  text-align: center;
+}
+
+#image {
+  width: 70%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  /* width: 50%; */
+}
+
+
+#card{
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+}

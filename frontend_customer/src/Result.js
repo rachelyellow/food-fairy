@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import NavBar from './NavBar.js';
 import axios from 'axios'; 
+import Card from 'react-bootstrap/Card'
+import './style.css'
 
 
 class Result extends Component {
@@ -30,11 +32,16 @@ class Result extends Component {
         return (
             <div>
                 <NavBar/>
-                <div>
-                    <h3>Based on your preference, we recommend this dish for you from {this.state.restaurant} </h3>
-                    <h1>{this.state.dishName}</h1>
-                    <img alt="" src={this.state.dishImage}/>
-                </div>
+
+                <Card id="card" bg="white" text="black">
+                    <Card.Header id="mainheader">Based on your preferences, we reccomend this dish for you from <h4>{this.state.restaurant}</h4> </Card.Header>
+                    <Card.Body>
+                    <Card.Title id="dishname" >{this.state.dishName}</Card.Title>
+                    <Card.Text>
+                 <img id="image" src={this.state.dishImage}/>
+                    </Card.Text>
+                    </Card.Body>
+                </Card>
             </div>
         );
     }

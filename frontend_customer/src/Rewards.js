@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import NavBar from './NavBar.js';
 import axios from 'axios'; 
 import Statusbar from "./Statusbar.js";
+import ImageLoader from 'react-load-image';
+import background from "./images/foodbackground.jpg";
 // import Table from 'react-bootstrap/Table'; 
 
 class Rewards extends Component {
@@ -34,13 +36,13 @@ class Rewards extends Component {
       return (<div>Loading....</div>)
     } else {
       return(
-        <div>
+        <div style={{height:'100vh', backgroundImage:"url("+background+")"}}>
           <Statusbar/>
           <NavBar/>
-          <div>
+          <div style={{height:'100vh', width:'80vw', backgroundColor:'white'}}>
             <h1>Your Rewards</h1>
               <table style={{width:'80%', border:'1px solid black'}} >
-                <thead>
+                <thead style={{height:'1em'}}>
                     <tr>
                       <th>#</th>
                       <th>Restaurant</th>
@@ -54,12 +56,11 @@ class Rewards extends Component {
                         <td>{idx + 1}</td>
                         <td>{result.restaurant.name}</td>
                         <td>{result.restaurant.reward}</td>
-                        <td>{result.dish[0].name} <img alt='food' src={result.dish[0].image}/></td>
+                        <td><img alt='food' src={result.dish[0].image} width="200" height="150" /><br/> {result.dish[0].name}</td>
                       </tr>
                     ))}
                 </tbody>
               </table>
-
             </div>
           </div>
       );

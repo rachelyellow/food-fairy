@@ -2,9 +2,7 @@ import React, {Component} from 'react';
 import NavBar from './NavBar.js';
 import axios from 'axios'; 
 import Statusbar from "./Statusbar.js";
-import ImageLoader from 'react-load-image';
 import background from "./images/foodbackground.jpg";
-// import Table from 'react-bootstrap/Table'; 
 
 class Rewards extends Component {
   constructor(){
@@ -36,10 +34,10 @@ class Rewards extends Component {
       return (<div>Loading....</div>)
     } else {
       return(
-        <div style={{height:'100vh', backgroundImage:"url("+background+")"}}>
+        <div style={{height:'100vh', backgroundImage:"url("+background+")", display: 'flex', justifyContent: 'center' }}>
           <Statusbar/>
           <NavBar/>
-          <div style={{height:'100vh', width:'80vw', backgroundColor:'white'}}>
+          <div style={{height:'100vh', width:'80vw', backgroundColor:'white', display: 'flex', justifyContent: 'center'}}>
             <h1>Your Rewards</h1>
               <table style={{width:'80%', border:'1px solid black'}} >
                 <thead style={{height:'1em'}}>

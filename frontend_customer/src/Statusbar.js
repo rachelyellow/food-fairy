@@ -1,16 +1,17 @@
 import React, {Component} from 'react';
 import { Link } from "react-router-dom";
+
 const linkStyle = {
   color: 'white',
   textShadow:'0px 2px 2px black',
   fontSize: '20px'
 }
+
 class Statusbar extends Component {
   render() {
     return (
-      
       <div style={{display:'flex', backgroundColor:'#230f04', height:'5em'}} >
-      <h3 style={{flex: '0 45%', color:'white', paddingTop:'26px', paddingLeft: '12px', fontFamily: 'Sacramento', fontSize: '40px', lineHeight: '1'}} > <span>🧚</span> Food Fairy</h3>
+        <h3 style={{flex: '0 45%', color:'white', paddingTop:'26px', paddingLeft: '12px', fontFamily: 'Sacramento', fontSize: '40px', lineHeight: '1'}} > <span>🧚</span> <Link style={{color:'white'}} to="/maps">Food Fairy</Link></h3>
         <h4 style={{ color:'white', padding:'1em 1em', width:'150px'}}>
         <Link style={linkStyle} to="/maps">Maps</Link></h4>
         <h4 style={{ color:'white', padding:'1em 0em', width:'150px'}}>

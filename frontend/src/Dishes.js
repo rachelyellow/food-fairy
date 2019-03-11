@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Table from 'react-bootstrap/Table'
 import axios from 'axios'; 
 import { Redirect } from 'react-router'
+import NavBar from './navbar.js';
 
 class Dishes extends Component {
   constructor(props) {
@@ -32,6 +33,7 @@ class Dishes extends Component {
   render() {
     return (
       <div>
+        <NavBar fixed="top" />
         <h2 style={{color:'black', fontWeight:'bold', padding:'17px', marginTop:'1em' }} >My Featured Dishes</h2>
         <form onSubmit={this.handleSubmit}>
           <Table striped bordered hover >

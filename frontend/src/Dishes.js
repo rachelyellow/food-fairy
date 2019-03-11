@@ -23,9 +23,10 @@ class Dishes extends Component {
     console.log("for loop data", data)
     axios.post('http://localhost:3000/restaurants/2/dishes',
       data
-     )
-
-     this.setState({submit: true})
+    )
+    .then(response => {
+      this.setState({submit: true})
+    })
   }
   
   render() {

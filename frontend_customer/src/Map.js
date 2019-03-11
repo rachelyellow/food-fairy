@@ -13,7 +13,8 @@ const mapStyles = {
 
 const imageStyle = {
     width: '200px',
-    height: '150px'
+    height: '150px',
+    paddingBottom:'5px'
 }
 
 export class MapContainer extends Component {
@@ -22,7 +23,6 @@ export class MapContainer extends Component {
         activeMarker: {},          //Shows the active marker upon click
         selectedPlace: {},   //Shows the infoWindow to the selected place upon a marker
         restaurants : [],
-        formatted_address : "",
         activeUser: 1,
         quizResults: [],
         completedQuizzes: [],
@@ -112,18 +112,23 @@ export class MapContainer extends Component {
             ) 
           }) }
           
-            <InfoWindow marker={this.state.activeMarker} visible={this.state.showingInfoWindow} onClose={this.onClose} >
+            <InfoWindow
+            marker={this.state.activeMarker} 
+            visible={this.state.showingInfoWindow} 
+            onClose={this.onClose} >
               <div>
                 <div>
                   <h4>{this.state.selectedPlace.name}</h4>
-                  <h5>{this.state.selectedPlace.streetAddress}</h5>
-                  <p>{this.state.selectedPlace.description}</p>
-                  <h3>{this.state.formatted_address}</h3>
+                  <h6>{this.state.selectedPlace.streetAddress}</h6>
                   <img style={imageStyle} alt="" src={this.state.selectedPlace.image}/>
+                  <br/>
+                  <i>{this.state.selectedPlace.description}</i>
                 </div>
                 {this.state.activeMarker && !this.state.availableQuizzes.includes(this.state.activeMarker.id) && 
-                <div>
-                  <p>There is currently no quiz for this restaurant. Please check back at a later time.</p>
+                <div style={{paddingTop:'10px'}} >
+                  There is currently no quiz for this restaurant.
+                  <br/>
+                  Please check back at a later time.
                 </div>
                 }
                 {this.state.activeMarker && !this.state.completedQuizzes.includes(this.state.activeMarker.id) && this.state.availableQuizzes.includes(this.state.activeMarker.id) &&
@@ -132,14 +137,14 @@ export class MapContainer extends Component {
                     </Router>
                 }
                 {this.state.activeMarker && this.state.completedQuizzes.includes(this.state.activeMarker.id) && 
-                <div>
-                  <p>
-                    You've already completed this quiz! Please check
+                <div style={{padding:'10px 0 0'}} >
+                    Oops, Seems you've already completed this quiz!
+                    <br/>
+                    Please check
                     <Router>
                       <Link to={'/rewards'}> MyRewards </Link>
                     </Router>
                     to view your rewards.
-                  </p>
                 </div>
                 }
               </div>

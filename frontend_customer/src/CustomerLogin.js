@@ -22,7 +22,7 @@ const loginStyles = {
       whiteSpace: 'nowrap',
       overFlow: 'hidden',
       paddingTop: '120px',
-      fontFamily: 'Dancing Script'
+      fontFamily: 'Sacramento'
   }
 
   

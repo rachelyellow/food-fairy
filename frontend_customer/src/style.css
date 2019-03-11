@@ -15,7 +15,7 @@
 #reward {
   text-align: center;
   color: white;
-  background-color: darkslategrey;
+  background-color: #3d100d;
   border-radius: 15px;
 }
 
@@ -24,8 +24,8 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
-  border: 5px solid darkred; /* Gray border */
+  width: 80%;
+  border: 2px solid darkred; /* Gray border */
   border-radius: 4px;  /* Rounded border */
   padding: 5px; /* Some padding */
   /* width: 50%; */

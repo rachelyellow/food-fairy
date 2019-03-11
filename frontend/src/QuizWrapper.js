@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios'; 
 import Quiz from './quiz.js'
 import QuizForm from './quizform.js'
+import NavBar from './navbar.js';
 
 
 class QuizWrapper extends Component {
@@ -32,8 +33,7 @@ class QuizWrapper extends Component {
   render() {
     return (
       <div>
-
-        
+          <NavBar fixed="top" />        
          { (this.state.quiz.length > 0)
              ? 
             <Quiz quiz={this.state.quiz} />

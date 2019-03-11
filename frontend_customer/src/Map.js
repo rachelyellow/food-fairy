@@ -139,7 +139,7 @@ export class MapContainer extends Component {
               }
               {this.state.activeMarker && this.state.completedQuizzes.includes(this.state.activeMarker.id) && 
               <div style={{padding:'10px 0 0'}} >
-                  Oops, Seems you've already completed this quiz!
+                  Oops, seems you've already completed this quiz!
                   <br/>
                   Please check
                   <Router>

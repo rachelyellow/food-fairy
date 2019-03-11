@@ -16,7 +16,7 @@ class App extends Component {
             <Switch>
               <Route path="/login" component={CustomerLogin} />  
               <Route path="/maps" component={Map} />
-              <Route path="/restauant/:restaurant_id/quiz/:quiz_id" component={Quiz} />
+              <Route path="/restaurant/:restaurant_id/quiz/:quiz_id" component={Quiz} />
               <Route path="/rewards" component={Rewards} />
               <Route path="/results/:id" component={Result} />
             </Switch>

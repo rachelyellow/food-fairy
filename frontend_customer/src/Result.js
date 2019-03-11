@@ -5,6 +5,7 @@ import Card from 'react-bootstrap/Card'
 import './style.css'
 
 
+
 class Result extends Component {
 
     constructor(){
@@ -33,15 +34,18 @@ class Result extends Component {
             <div>
                 <NavBar/>
 
-                <div id="card">
-                    <div id="mainheader">Based on your preferences, we reccomend this dish for you from <h4>{this.state.restaurant}</h4> </div>
-                    <div>
-                    <div id="dishname" >{this.state.dishName}</div>
-                    <div>
-                 <img id="image" src={this.state.dishImage}/>
-                    </div>
-                    </div>
-                </div>
+                <Card id='card'  border="secondary" style={{ width: '25rem' }}>
+                    <Card.Header id='reward'>Based off your preferences, we recommend you try this dish</Card.Header>
+                    <Card.Body>
+                        <Card.Title id='mainheader'><h4>{this.state.dishName}</h4></Card.Title>
+                        <Card.Text id='dishname'>
+                        <div>
+                            <img id="image" src={this.state.dishImage}/>
+                        </div>
+                        </Card.Text>
+                    </Card.Body>
+                    <Card.Header id='reward'>Visit the <a href="/rewards">Rewards Page</a> to see all your Results</Card.Header>
+                </Card>
             </div>
         );
     }

@@ -56,6 +56,7 @@ class Quizform extends Component {
   render() {
     return(
       <div>
+      <h2 style={{color:'black', fontWeight:'bold', padding:'17px', marginTop:'.5em' }} >Create Quiz</h2>
       <form  onSubmit={this.handleSubmit} name="option">
       <Table striped bordered hover>
         <thead>

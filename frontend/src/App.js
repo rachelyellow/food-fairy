@@ -13,7 +13,7 @@ class App extends Component {
 
   render() {
     return (
-      <div style={{height:'100vh', backgroundImage:"url("+background+")", backgroundSize: 'cover' }}>
+      <div style={{ height:'100vh', backgroundImage:"url("+background+")", backgroundSize: 'cover', fontFamily:'Noto Sans TC' }}>
         <NavBar fixed="top" />
         <Router>
             <Switch>

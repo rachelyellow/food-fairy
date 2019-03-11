@@ -32,7 +32,6 @@ question3 = Question.create(quiz_id:1, inquiry:"When I add hot sauce, I prefer t
 # question4 = Question.create(quiz_id:1, inquiry:"Which of the following do you prefer?")
 
 
-
 #Options for Question 1
 option1 = Option.create(question_id: 1, name:"Small")
 option2 = Option.create(question_id: 1, name:"Large")
@@ -84,9 +83,6 @@ DishOption.create(option_id:1, dish_id:5)
 DishOption.create(option_id:1, dish_id:7)
 DishOption.create(option_id:1, dish_id:9)
 
-
-
-
 # All 12pc sushi(Heavy Option)
 DishOption.create(option_id:2, dish_id:1)
 DishOption.create(option_id:2, dish_id:4)
@@ -94,18 +90,11 @@ DishOption.create(option_id:2, dish_id:8)
 DishOption.create(option_id:2, dish_id:8)
 DishOption.create(option_id:2, dish_id:10)
 
-
-
-
 # All raw fish dishes
 DishOption.create(option_id:3, dish_id:1)
 DishOption.create(option_id:3, dish_id:2)
 
-
-
-
-
-# Not raw fish dishes
+# Dishes without raw fish
 DishOption.create(option_id:4, dish_id:3)
 DishOption.create(option_id:4, dish_id:4)
 DishOption.create(option_id:4, dish_id:5)
@@ -115,9 +104,6 @@ DishOption.create(option_id:4, dish_id:8)
 DishOption.create(option_id:4, dish_id:9)
 DishOption.create(option_id:4, dish_id:10)
 
-
-
-
 # All hot dishes
 DishOption.create(option_id:5, dish_id:5)
 DishOption.create(option_id:5, dish_id:6)
@@ -126,9 +112,7 @@ DishOption.create(option_id:5, dish_id:6)
 DishOption.create(option_id:6, dish_id:7)
 DishOption.create(option_id:6, dish_id:8)
 
-
 # All mild options 
-
 DishOption.create(option_id:7, dish_id:1)
 DishOption.create(option_id:7, dish_id:2)
 DishOption.create(option_id:7, dish_id:3)

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import NavBar from './NavBar.js';
+
 import axios from 'axios'; 
 import Card from 'react-bootstrap/Card'
 import './style.css'
@@ -31,7 +31,7 @@ class Result extends Component {
     render() {
         return (
             <div>
-                <NavBar/>
+        
 
                 <div id="card">
                     <div id="mainheader">Based on your preferences, we reccomend this dish for you from <h4>{this.state.restaurant}</h4> </div>

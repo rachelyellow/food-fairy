@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 import axios from 'axios'; 
 import Card from 'react-bootstrap/Card'
+import Statusbar from './Statusbar.js'
 import './style.css'
 
 
@@ -32,9 +33,8 @@ class Result extends Component {
     render() {
         return (
             <div>
-        
-
-                <Card id='card'  border="secondary" style={{ width: '25rem' }}>
+                <Statusbar/>
+                <Card id='card'  border="secondary" style={{ width: '30rem', marginTop:'5em' }}>
                     <Card.Header id='reward'>Based off your preferences, we recommend you try this dish</Card.Header>
                     <Card.Body>
                         <Card.Title id='mainheader'><h4>{this.state.dishName}</h4></Card.Title>

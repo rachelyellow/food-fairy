@@ -21,7 +21,6 @@ class App extends Component {
               <Route path="/restaurants/quizzes" component={QuizWrapper} />  
             </Switch>
         </Router>
-
       </div>
     );
   }

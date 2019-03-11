@@ -132,9 +132,11 @@ export class MapContainer extends Component {
                 </div>
                 }
                 {this.state.activeMarker && !this.state.completedQuizzes.includes(this.state.activeMarker.id) && this.state.availableQuizzes.includes(this.state.activeMarker.id) &&
+                  <div style={{paddingTop:'10px'}} >
                     <Router>
-                      <Link to={to}>Quiz</Link>
+                      <Link to={to}>Take Quiz</Link>
                     </Router>
+                  </div>
                 }
                 {this.state.activeMarker && this.state.completedQuizzes.includes(this.state.activeMarker.id) && 
                 <div style={{padding:'10px 0 0'}} >

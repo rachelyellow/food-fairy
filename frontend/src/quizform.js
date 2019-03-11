@@ -47,9 +47,10 @@ class Quizform extends Component {
     console.log("for loop data", data)
     axios.post('http://localhost:3000/restaurants/2/quizzes',
       data
-     )
-
-     this.setState({submit: true})
+    )
+    .then(response => {
+      this.setState({submit: true})
+    })
   }
 
   render() {
@@ -178,7 +179,7 @@ class Quizform extends Component {
         </tbody>
       </Table>
       <button type="submit"> Submit </button>
-      {this.state.submit && <Redirect to='/restaurants/quizzes'/>}
+      {this.state.submit && window.location.reload()}
       </form>
       </div>
     )

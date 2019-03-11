@@ -4,6 +4,7 @@ import axios from 'axios'
 import Statusbar from "./Statusbar.js";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 
+
 const mapStyles = {
   width: '80%',
   height: '70%',
@@ -80,8 +81,7 @@ export class MapContainer extends Component {
       return (
         <div>
         <Statusbar/>
-        <NavBar/>
-        <h2 style={{ color:'white', padding:'1em', marginLeft:'5em' }} >Choose a restaurant to start earning rewards!</h2>
+        <h6 style={{ color:'white', padding:'0.5em', textShadow:' 0px 2px 2px black', backgroundColor:'#3d100d', border:'1px solid black', margin:'2em auto 1em', borderRadius:'10px', width:'25%' }} >Choose a restaurant to start earning rewards!</h6>
         <Map
           google={this.props.google}
           zoom={17}

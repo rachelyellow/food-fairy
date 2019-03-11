@@ -73,8 +73,8 @@ class Quizform extends Component {
             <td>1 <input type="text" name="question[1][options][1]"/><br/>2 <input type="text" name="question[1][options][2]"/><br/>3 <input type="text" name="question[1][options][3]"/></td>
             <td>Dish 1 
             <select name="dishid">
-                  {this.state.dishes.map((dish, idx) => (
-                      <option key={idx} value={dish.id}>{dish.name}</option>
+                {this.state.dishes.map((dish, idx) => (
+                    <option key={idx} value={dish.id}>{dish.name}</option>
               ))}
             </select>
               
@@ -83,7 +83,7 @@ class Quizform extends Component {
               <select name="dishid">
                 {this.state.dishes.map((dish, idx) => (
                   
-                        <option key={idx} value={dish.id}>{dish.name}</option>
+                  <option key={idx} value={dish.id}>{dish.name}</option>
                     
                 ))}
             </select>
@@ -94,7 +94,7 @@ class Quizform extends Component {
               <select name="dishid">
                 {this.state.dishes.map((dish, idx) => (
                   
-                        <option key={idx} value={dish.id}>{dish.name}</option>
+                  <option key={idx} value={dish.id}>{dish.name}</option>
                     
                 ))}
             </select>
@@ -110,7 +110,7 @@ class Quizform extends Component {
             <select name="dishid">
                 {this.state.dishes.map((dish, idx) => (
                   
-                        <option key={idx} value={dish.id}>{dish.name}</option>
+                  <option key={idx} value={dish.id}>{dish.name}</option>
                     
                 ))}
             </select>
@@ -120,7 +120,7 @@ class Quizform extends Component {
               <select name="dishid">
                 {this.state.dishes.map((dish, idx) => (
                   
-                        <option key={idx} value={dish.id}>{dish.name}</option>
+                  <option key={idx} value={dish.id}>{dish.name}</option>
                     
                 ))}
             </select>
@@ -131,7 +131,7 @@ class Quizform extends Component {
               <select name="dishid">
                 {this.state.dishes.map((dish, idx) => (
                   
-                        <option key={idx} value={dish.id}>{dish.name}</option>
+                  <option key={idx} value={dish.id}>{dish.name}</option>
                     
                 ))}
             </select>
@@ -150,7 +150,7 @@ class Quizform extends Component {
                 <select name="dishid">
                     {this.state.dishes.map((dish, idx) => (
                       
-                            <option key={idx} value={dish.id}>{dish.name}</option>
+                      <option key={idx} value={dish.id}>{dish.name}</option>
                         
                     ))}
                 </select>
@@ -160,7 +160,7 @@ class Quizform extends Component {
               <select name="dishid">
                   {this.state.dishes.map((dish, idx) => (
                     
-                          <option key={idx} value={dish.id}>{dish.name}</option>
+                    <option key={idx} value={dish.id}>{dish.name}</option>
                       
                   ))}
             </select>
@@ -169,7 +169,7 @@ class Quizform extends Component {
               <select name="dishid">
               {this.state.dishes.map((dish, idx) => (
                  
-                      <option key={idx} value={dish.id}>{dish.name}</option>
+                <option key={idx} value={dish.id}>{dish.name}</option>
                   
               ))}
             </select>

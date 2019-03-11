@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import NavBar from './NavBar.js';
 import axios from 'axios'; 
 import Statusbar from './Statusbar.js'
 import Table from 'react-bootstrap/Table'

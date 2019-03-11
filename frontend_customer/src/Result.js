@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import NavBar from './NavBar.js';
+
 import axios from 'axios'; 
 import Card from 'react-bootstrap/Card'
 import './style.css'
@@ -32,7 +32,7 @@ class Result extends Component {
     render() {
         return (
             <div>
-                <NavBar/>
+        
 
                 <Card id='card'  border="secondary" style={{ width: '25rem' }}>
                     <Card.Header id='reward'>Based off your preferences, we recommend you try this dish</Card.Header>

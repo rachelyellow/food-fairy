@@ -12,7 +12,7 @@ import { Switch } from 'react-router'
 class App extends Component {
   render() {
     return (
-      <div className="App" style={{height:'100vh', backgroundImage:"url("+background+")", backgroundSize: 'cover' }}>
+      <div className="App" style={{height:'100vh', backgroundImage:"url("+background+")", backgroundSize: 'cover',  backgroundAttachment: 'fixed' }}>
         <Router>
             <Switch>
               <Route path="/login" component={CustomerLogin} />  

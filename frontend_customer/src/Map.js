@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react';
 import axios from 'axios'
-import NavBar from './NavBar.js';
 import Statusbar from "./Statusbar.js";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 
@@ -93,7 +92,6 @@ export class MapContainer extends Component {
           }}
         >
         { this.state.restaurants.map((restaurant) => {
-
           return (
             <Marker
               key={restaurant.id}

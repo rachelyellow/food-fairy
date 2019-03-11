@@ -178,7 +178,7 @@ class Quizform extends Component {
           </tr>
         </tbody>
       </Table>
-      <button type="submit"> Submit </button>
+      <button type="submit" style={{ borderRadius:'25px', padding:'15px 18px', marginLeft:'34em', marginTop:'2em', fontSize:'1.2em' }}> Submit </button>
       {this.state.submit && window.location.reload()}
       </form>
       </div>

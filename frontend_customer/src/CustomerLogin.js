@@ -21,7 +21,7 @@ const loginStyles = {
       paddingLeft: '760px',
       whiteSpace: 'nowrap',
       overFlow: 'hidden',
-      paddingTop: '120px',
+      paddingTop: '3em',
       fontFamily: 'Sacramento'
   }
 

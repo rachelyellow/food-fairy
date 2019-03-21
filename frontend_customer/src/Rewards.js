@@ -36,7 +36,7 @@ class Rewards extends Component {
         <div>
           <Statusbar/>
           <div style={{marginLeft:'13em'}} >
-            <h2 style={{color:'white', padding:'1em', fontWeight:'bold' }} >My Rewards</h2>
+            <h2 style={{color:'white', padding:'1em', marginTop:'1em', fontWeight:'bold', textShadow:'2px 2px black' }} >My Rewards</h2>
               <Table striped bordered hover variant="dark" style={{width:'80%', border:'1px solid black'}} >
                 <thead style={{height:'1em'}}>
                     <tr>

@@ -23,27 +23,28 @@ quiz1 = Quiz.create(restaurant_id:1);
 
 # Quiz Questions 
 # 1
-question1 = Question.create(quiz_id:1, inquiry:"What type of portions do you prefer?")
+question1 = Question.create(quiz_id:1, inquiry:"Are you hungry, or HANGRY?")
 # 2
-question2 = Question.create( quiz_id:1, inquiry:"Do you eat raw fish?")
+question2 = Question.create(quiz_id:1, inquiry:"What did the sushi chef say to the magician?")
 # 3
-question3 = Question.create(quiz_id:1, inquiry:"When I add hot sauce, I prefer to add it like this:")
+question3 = Question.create(quiz_id:1, inquiry:"What's the name of the sushi bar that lawyers always go to?")
 # # 4
 # question4 = Question.create(quiz_id:1, inquiry:"Which of the following do you prefer?")
 
 
 #Options for Question 1
-option1 = Option.create(question_id: 1, name:"Small")
-option2 = Option.create(question_id: 1, name:"Large")
+option1 = Option.create(question_id: 1, name:"I'm Hungry")
+option2 = Option.create(question_id: 1, name:"I HANGRY")
 
 #Options for Question 2
-option3 = Option.create(question_id: 2, name:"Yes")
-option4 = Option.create(question_id: 2, name:"No")
+option3 = Option.create(question_id: 2, name:"Pick a cod, any cod!")
+option4 = Option.create(question_id: 2, name:"I don't get it..")
+
 
 #Options for Question 3
-option5 = Option.create(question_id: 3, name:"A line")
-option6 = Option.create(question_id: 3, name:"More than 1 dot")
-option7 = Option.create(question_id: 3, name:"A dot")
+option5 = Option.create(question_id: 3, name:"Hot Temper-a")
+option6 = Option.create(question_id: 3, name:"So-Su-Mi")
+option7 = Option.create(question_id: 3, name:"I don't get it..")
 
 
 # #Options for Question 4

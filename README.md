@@ -4,10 +4,19 @@
 
 ## Final Product
 
-<img src="/img/create-quiz.png" width="75%">
-<img src="/img/add-dishes.png" width="75%">
-<img src="/img/Quiz-resto.png" width="75%">
-<img src="/img/quiz-demo.gif" width="75%">
+Completing a quiz as a customer
+<img src="/img/quiz-demo.gif" width="80%">
+
+Restaurant use:
+
+1. Add dishes with a corresponding photo to be featured from your menu.
+<img src="/img/add-dishes.png" width="80%">
+
+2. Create a quiz and link the answers to your suggested dishes
+<img src="/img/create-quiz.png" width="80%">
+
+3. See your quiz once it is created
+<img src="/img/Quiz-resto.png" width="80%">
 
 ## PURPOSE
 

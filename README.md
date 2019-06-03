@@ -4,10 +4,13 @@
 
 ## Final Product
 
-Completing a quiz as a customer
+##### Completing a quiz as a customer
+
 <img src="/img/quiz-demo.gif" width="80%">
 
-Restaurant use:
+
+
+##### Restaurant use:
 
 1. Add dishes with a corresponding photo to be featured from your menu.
 <img src="/img/add-dishes.png" width="80%">

@@ -2,6 +2,26 @@
 
 # Food Fairy
 
+
+## PURPOSE
+
+Food Fairy aims to connect local restaurants with new customers by enhancing the culinary experience of its customers on its platform. When using the app, customers are incentivized to go outside their comfort zone to try new restaurants and dishes.
+
+Users can browse through nearby restaurants on a localized map and complete a preferences quizzes provided by the restaurant. Upon completion of a quiz, Customers will be recommended a dish from the chosen restaurant. The customer will then be rewarded with an exclusive perk specific to said restaurant. For example, a customer could recieve a free drink with their purchase. 
+
+Restaurants can create and customize fun quizzes which offer an incentive to new customers to try out their feature dishes.
+
+
+## TARGET AUDIENCE
+
+Restaurants:
+- Mom and pop shops in areas with little foot traffic
+
+Customers:
+- Individuals seeking for new culinary experiences outside of their comfort zone.
+- Adventurous diners
+
+
 ## Final Product
 
 ##### Completing a quiz as a customer
@@ -21,23 +41,6 @@
 3. See your quiz once it is created
 <img src="/img/Quiz-resto.png" width="80%">
 
-## PURPOSE
-
-Food Fairy aims to connect local restaurants with new customers by enhancing the culinary experience of its customers on its platform. When using the app, customers are incentivized to go outside their comfort zone to try new restaurants and dishes.
-
-Users can browse through nearby restaurants on a localized map and complete a preferences quizzes provided by the restaurant. Upon completion of a quiz, Customers will be recommended a dish from the chosen restaurant. The customer will then be rewarded with an exclusive perk specific to said restaurant. For example, a customer could recieve a free drink with their purchase. 
-
-Restaurants can create and customize fun quizzes which offer an incentive to new customers to try out their feature dishes.
-
-
-## TARGET AUDIENCE
-
-Restaurants:
-- Mom and pop shops in areas with little foot traffic
-
-Customers:
-- Individuals seeking for new culinary experiences outside of their comfort zone.
-- Adventurous diners
 
 ## Dependencies
 

@@ -57,8 +57,8 @@ option7 = Option.create(question_id: 3, name:"I don't get it..")
 # Dishes 
 
 # Raw Fish(light and heavy)
-dish1 = Dish.create(restaurant_id:1, name:"Ruby Sashimi [12pc]", image:"https://scontent-lax3-1.cdninstagram.com/vp/a0d1f0f0250388ce58c075c9db8eedd5/5CD57D20/t51.2885-15/e35/c41.0.998.998/s480x480/46797746_2460616444012583_2590863162451918337_n.jpg?_nc_ht=scontent-lax3-1.cdninstagram.com" )
-dish2 = Dish.create(restaurant_id:1, name:"Ruby Sashimi [6pc]", image:"https://scontent-lax3-1.cdninstagram.com/vp/a0d1f0f0250388ce58c075c9db8eedd5/5CD57D20/t51.2885-15/e35/c41.0.998.998/s480x480/46797746_2460616444012583_2590863162451918337_n.jpg?_nc_ht=scontent-lax3-1.cdninstagram.com" )
+dish1 = Dish.create(restaurant_id:1, name:"Ruby Sashimi [12pc]", image:"http://sushisong.com/wp-content/uploads/Sashimi-Appetizer.jpg" )
+dish2 = Dish.create(restaurant_id:1, name:"Ruby Sashimi [6pc]", image:"http://sushisong.com/wp-content/uploads/Sashimi-Appetizer.jpg" )
 
 # Not raw Fish
 dish3 = Dish.create(restaurant_id:1, name:"Tempura Shrimp [6pc]", image:"https://www.justonecookbook.com/wp-content/uploads/2016/04/Dragon-Roll-New.jpg" )

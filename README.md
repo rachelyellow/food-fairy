@@ -4,6 +4,11 @@
 
 ## Final Product
 
+<img src="/img/create-quiz.png" width="75%">
+<img src="/img/add-dishes.png" width="75%">
+<img src="/img/Quiz-resto.png" width="75%">
+<img src="/img/quiz-demo.gif" width="75%">
+
 ## PURPOSE
 
 Food Fairy aims to connect local restaurants with new customers by enhancing the culinary experience of its customers on its platform. When using the app, customers are incentivized to go outside their comfort zone to try new restaurants and dishes.
@@ -17,10 +22,10 @@ Restaurants can create and customize fun quizzes which offer an incentive to new
 
 Restaurants:
 - Mom and pop shops in areas with little foot traffic
-- Adventurous diners
 
 Customers:
 - Individuals seeking for new culinary experiences outside of their comfort zone.
+- Adventurous diners
 
 ## Dependencies
 
@@ -59,10 +64,6 @@ First, clone the repo to your local machine
 - Run the development web server using the `bin/rails s -b 0.0.0.0` command. 
 
 ```
-
-
-- Mom and pop shops in areas with little foot traffic
-- adventurous diners
 
 ## TEAM MEMBERS
 

@@ -4,9 +4,9 @@
 
 ### PURPOSE
 
-Food Fairy aims to connect local restaurants with new customers by enhancing the culinary experience of its customers on its platform. Here, customers are incentivized to go outside their comfort zone to try new restaurants and dishes.
+Food Fairy aims to connect local restaurants with new customers by enhancing the culinary experience of its customers on its platform. When using the app, customers are incentivized to go outside their comfort zone to try new restaurants and dishes.
 
-Customers can browse through restaurants within their proximity from a map and complete a preference quiz provided by the restaurant. Upon completion of a quiz, Customers can find recommended dishes from the chosen restaurant. Furthermore, the customer will be rewarded with an exclusive perk specific to said restaurant. For instance, the reward can be $5.00 off first order. 
+Users can browse through nearby restaurants on a localized map and complete a preferences quizzes provided by the restaurant. Upon completion of a quiz, Customers will be recommended a dish from the chosen restaurant. The customer will then be rewarded with an exclusive perk specific to said restaurant. For example, a customer could recieve a free drink with their purchase. 
 
 
 Restaurants can create and customize fun quizzes which offer an incentive to new customers to try out their feature dishes.

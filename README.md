@@ -14,8 +14,8 @@ Restaurants can create and customize fun quizzes which offer an incentive to new
 
 ### TARGET AUDIENCE
 
--Mom and pop shops in areas with little foot traffic
--adventurous diners
+- Mom and pop shops in areas with little foot traffic
+- adventurous diners
 
 ### TEAM MEMBERS
 

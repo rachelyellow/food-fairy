@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import NavBar from './NavBar.js';
 import axios from 'axios'; 
 import Statusbar from './Statusbar.js'
 import Table from 'react-bootstrap/Table'
@@ -36,9 +35,8 @@ class Rewards extends Component {
       return(
         <div>
           <Statusbar/>
-          <NavBar/>
           <div style={{marginLeft:'13em'}} >
-            <h2 style={{color:'black'}} >My Rewards</h2>
+            <h2 style={{color:'white', padding:'1em', marginTop:'1em', fontWeight:'bold', textShadow:'2px 2px black' }} >My Rewards</h2>
               <Table striped bordered hover variant="dark" style={{width:'80%', border:'1px solid black'}} >
                 <thead style={{height:'1em'}}>
                     <tr>

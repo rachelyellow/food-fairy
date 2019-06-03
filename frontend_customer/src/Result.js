@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
-import NavBar from './NavBar.js';
+
 import axios from 'axios'; 
 import Card from 'react-bootstrap/Card'
+import Statusbar from './Statusbar.js'
 import './style.css'
+
 
 
 class Result extends Component {
@@ -31,17 +33,19 @@ class Result extends Component {
     render() {
         return (
             <div>
-                <NavBar/>
-
-                <div id="card">
-                    <div id="mainheader">Based on your preferences, we reccomend this dish for you from <h4>{this.state.restaurant}</h4> </div>
-                    <div>
-                    <div id="dishname" >{this.state.dishName}</div>
-                    <div>
-                 <img id="image" src={this.state.dishImage}/>
-                    </div>
-                    </div>
-                </div>
+                <Statusbar/>
+                <Card id='card'  border="secondary" style={{ width: '30rem', marginTop:'5em' }}>
+                    <Card.Header id='reward'>Based off your preferences, we recommend you try this dish</Card.Header>
+                    <Card.Body>
+                        <Card.Title id='mainheader'><h4>{this.state.dishName}</h4></Card.Title>
+                        <Card.Text id='dishname'>
+                        <div>
+                            <img id="image" src={this.state.dishImage}/>
+                        </div>
+                        </Card.Text>
+                    </Card.Body>
+                    <Card.Header id='reward'>Visit the <a href="/rewards">Rewards Page</a> to see all your Results</Card.Header>
+                </Card>
             </div>
         );
     }

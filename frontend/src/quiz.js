@@ -7,7 +7,7 @@ class Quiz extends Component{
 
   render() {  
     return(
-      <ListGroup variant="flush">
+      <ListGroup variant="flush" style={{paddingTop:'2em'}} >
         {
           this.props.quiz.map((item, idx) => {
             return <Question question={item} key={idx} />

@@ -56,6 +56,7 @@ class Quizform extends Component {
   render() {
     return(
       <div>
+      <h2 style={{color:'black', fontWeight:'bold', padding:'17px', marginTop:'.5em' }} >Create Quiz</h2>
       <form  onSubmit={this.handleSubmit} name="option">
       <Table striped bordered hover>
         <thead>
@@ -73,8 +74,8 @@ class Quizform extends Component {
             <td>1 <input type="text" name="question[1][options][1]"/><br/>2 <input type="text" name="question[1][options][2]"/><br/>3 <input type="text" name="question[1][options][3]"/></td>
             <td>Dish 1 
             <select name="dishid">
-                  {this.state.dishes.map((dish, idx) => (
-                      <option key={idx} value={dish.id}>{dish.name}</option>
+                {this.state.dishes.map((dish, idx) => (
+                    <option key={idx} value={dish.id}>{dish.name}</option>
               ))}
             </select>
               
@@ -83,7 +84,7 @@ class Quizform extends Component {
               <select name="dishid">
                 {this.state.dishes.map((dish, idx) => (
                   
-                        <option key={idx} value={dish.id}>{dish.name}</option>
+                  <option key={idx} value={dish.id}>{dish.name}</option>
                     
                 ))}
             </select>
@@ -94,7 +95,7 @@ class Quizform extends Component {
               <select name="dishid">
                 {this.state.dishes.map((dish, idx) => (
                   
-                        <option key={idx} value={dish.id}>{dish.name}</option>
+                  <option key={idx} value={dish.id}>{dish.name}</option>
                     
                 ))}
             </select>
@@ -110,7 +111,7 @@ class Quizform extends Component {
             <select name="dishid">
                 {this.state.dishes.map((dish, idx) => (
                   
-                        <option key={idx} value={dish.id}>{dish.name}</option>
+                  <option key={idx} value={dish.id}>{dish.name}</option>
                     
                 ))}
             </select>
@@ -120,7 +121,7 @@ class Quizform extends Component {
               <select name="dishid">
                 {this.state.dishes.map((dish, idx) => (
                   
-                        <option key={idx} value={dish.id}>{dish.name}</option>
+                  <option key={idx} value={dish.id}>{dish.name}</option>
                     
                 ))}
             </select>
@@ -131,7 +132,7 @@ class Quizform extends Component {
               <select name="dishid">
                 {this.state.dishes.map((dish, idx) => (
                   
-                        <option key={idx} value={dish.id}>{dish.name}</option>
+                  <option key={idx} value={dish.id}>{dish.name}</option>
                     
                 ))}
             </select>
@@ -150,7 +151,7 @@ class Quizform extends Component {
                 <select name="dishid">
                     {this.state.dishes.map((dish, idx) => (
                       
-                            <option key={idx} value={dish.id}>{dish.name}</option>
+                      <option key={idx} value={dish.id}>{dish.name}</option>
                         
                     ))}
                 </select>
@@ -160,7 +161,7 @@ class Quizform extends Component {
               <select name="dishid">
                   {this.state.dishes.map((dish, idx) => (
                     
-                          <option key={idx} value={dish.id}>{dish.name}</option>
+                    <option key={idx} value={dish.id}>{dish.name}</option>
                       
                   ))}
             </select>
@@ -169,7 +170,7 @@ class Quizform extends Component {
               <select name="dishid">
               {this.state.dishes.map((dish, idx) => (
                  
-                      <option key={idx} value={dish.id}>{dish.name}</option>
+                <option key={idx} value={dish.id}>{dish.name}</option>
                   
               ))}
             </select>
@@ -178,7 +179,7 @@ class Quizform extends Component {
           </tr>
         </tbody>
       </Table>
-      <button type="submit"> Submit </button>
+      <button type="submit" style={{ borderRadius:'25px', padding:'15px 18px', marginLeft:'34em', marginTop:'2em', fontSize:'1.2em' }}> Submit </button>
       {this.state.submit && window.location.reload()}
       </form>
       </div>

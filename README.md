@@ -2,22 +2,69 @@
 
 # Food Fairy
 
-### PURPOSE
+## Final Product
+
+## PURPOSE
 
 Food Fairy aims to connect local restaurants with new customers by enhancing the culinary experience of its customers on its platform. When using the app, customers are incentivized to go outside their comfort zone to try new restaurants and dishes.
 
 Users can browse through nearby restaurants on a localized map and complete a preferences quizzes provided by the restaurant. Upon completion of a quiz, Customers will be recommended a dish from the chosen restaurant. The customer will then be rewarded with an exclusive perk specific to said restaurant. For example, a customer could recieve a free drink with their purchase. 
 
-
 Restaurants can create and customize fun quizzes which offer an incentive to new customers to try out their feature dishes.
 
 
-### TARGET AUDIENCE
+## TARGET AUDIENCE
+
+Restaurants:
+- Mom and pop shops in areas with little foot traffic
+- Adventurous diners
+
+Customers:
+- Individuals seeking for new culinary experiences outside of their comfort zone.
+
+## Dependencies
+
+- react
+- react-dom
+- rails 5.1
+- axios
+- bootstrap
+- google-maps-react
+- react-router-dom
+- react-hot-loader
+* [babel-loader](https://github.com/babel/babel-loader)
+
+
+## Getting Started
+
+First, clone the repo to your local machine
+
+
+```
+1st Server: Restaurant Side
+- Go into `frontend` directory (using `cd frontend` command from the `foodfairy` directory)
+- Install all dependencies (using `npm install` command).
+- Run the development web server using the `npm start` command.
+- open http://localhost:5000 
+
+2nd Server: Customer Side
+- Go into `frontend_customer` directory (using `cd frontend_customer` command from the `foodfairy` directory)
+- Install all dependencies (using `npm install` command).
+- Run the development web server using the `npm start` command. 
+- open http://localhost:3001
+
+3rd Server: Backend
+- Go into `backend` directory (using `cd backend` command from the `foodfairy` directory)
+- Install all dependencies (using `bundle install` command).
+- Run the development web server using the `bin/rails s -b 0.0.0.0` command. 
+
+```
+
 
 - Mom and pop shops in areas with little foot traffic
 - adventurous diners
 
-### TEAM MEMBERS
+## TEAM MEMBERS
 
 [Gagan Lal](https://github.com/gaganlal)
 [Anisa Tahlil](https://github.com/anisa114)
